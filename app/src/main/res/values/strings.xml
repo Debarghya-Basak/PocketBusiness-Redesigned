@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">PocketBusiness</string>
+    <string name="welcome">Welcome</string>
+    <string name="registrationpage">Registration Page</string>
+    <string name="loginpage">Login Page</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="inventory">Inventory</string>
+
+    <integer name="FADE_IN_DURATION">400</integer>
+    <integer name="SCROLL_IN_FROM_BOTTOM_DURATION">400</integer>
+    <!-- Strings used for fragments for navigation -->
+
+</resources>

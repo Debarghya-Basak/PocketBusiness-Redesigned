@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginPage">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/global_logo_background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/headerImage"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:src="@drawable/pocketbusiness"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <View
+        android:id="@+id/appNameBackgroundBlur"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="-50dp"
+        android:background="@drawable/global_app_name_background_blur"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/backgroundBlur"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/global_section_background_blur"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appNameBackgroundBlur"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        android:textStyle="bold|italic"
+        android:elevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/sectionLoginRegisterContainer" />
+
+    <View
+        android:id="@+id/sectionLoginRegister"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="-50dp"
+        android:background="@drawable/global_section_container_card"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerImage" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sectionLoginRegisterContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="10dp"
+        app:layout_constraintTop_toBottomOf="@id/headerImage"
+        app:layout_constraintBottom_toBottomOf="@id/sectionLoginRegister"
+        app:layout_constraintStart_toStartOf="@id/sectionLoginRegister"
+        app:layout_constraintEnd_toEndOf="@id/sectionLoginRegister"
+        android:layout_marginTop="-50dp">
+
+        <TextView
+            android:id="@+id/loginText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/loginpage"
+            android:textAllCaps="true"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            android:transitionName="sectionAnimation"
+            app:layout_constraintEnd_toEndOf="@id/sectionLoginRegisterContainer"
+            app:layout_constraintStart_toStartOf="@id/sectionLoginRegisterContainer"
+            app:layout_constraintTop_toTopOf="@id/sectionLoginRegisterContainer" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/loginText"
+            app:layout_constraintBottom_toBottomOf="@id/sectionLoginRegisterContainer"
+            app:layout_constraintStart_toStartOf="@id/sectionLoginRegisterContainer"
+            app:layout_constraintEnd_toEndOf="@id/sectionLoginRegisterContainer"
+            app:flow_verticalAlign="center"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editTextContainerEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                app:boxStrokeColor="@color/black"
+                app:hintTextColor="@color/black"
+                android:hint="Enter your email address"
+                app:boxCornerRadiusTopStart="50dp"
+                app:boxCornerRadiusTopEnd="50dp"
+                app:boxCornerRadiusBottomStart="50dp"
+                app:boxCornerRadiusBottomEnd="50dp"
+                app:errorEnabled="true"
+                app:errorTextAppearance="@style/ErrorTextInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextEmailAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editTextContainerPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                app:boxStrokeColor="@color/black"
+                app:hintTextColor="@color/black"
+                android:hint="Enter your password"
+                app:boxCornerRadiusTopStart="50dp"
+                app:boxCornerRadiusTopEnd="50dp"
+                app:boxCornerRadiusBottomStart="50dp"
+                app:boxCornerRadiusBottomEnd="50dp"
+                app:passwordToggleEnabled="true"
+                app:errorEnabled="true"
+                app:errorIconDrawable="@null"
+                app:errorTextAppearance="@style/ErrorTextInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textPassword"
+                    android:selectAllOnFocus="false"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+
+                     />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/loginSubmitButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginBottom="20dp"
+                app:cornerRadius="50dp"
+                app:backgroundTint="@color/black"
+                android:elevation="10dp"
+                android:text="LOGIN"
+                android:onClick="checkAllDetails"
+                android:transitionName="sectionAnimation"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/sectionLoginRegisterContainer"
+                app:layout_constraintEnd_toEndOf="@id/sectionLoginRegisterContainer"
+                app:layout_constraintStart_toStartOf="@id/sectionLoginRegisterContainer"
+                app:layout_constraintTop_toBottomOf="@id/loginText" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Forgot password ?"
+                android:textAlignment="center"
+                android:textSize="15dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="New user? sign up"
+                android:textAlignment="center"
+                android:textSize="15dp"/>
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

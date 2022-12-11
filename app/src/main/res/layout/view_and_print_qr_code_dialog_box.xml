@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/global_section_container_card"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical">
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/qrCodeInventoryDialogBox"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:strokeColor="@color/black"
+            app:strokeWidth="2dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/printButtonQrCodeInventoryDialogBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:layout_margin="10dp"
+                app:cornerRadius="50dp"
+                android:layout_weight="1"
+                android:text="PRINT"
+                android:backgroundTint="@color/black"
+                app:rippleColor="@color/black"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cancelButtonQrCodeInventoryDialogBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:layout_margin="10dp"
+                app:cornerRadius="50dp"
+                android:layout_weight="1"
+                android:text="CANCEL"
+                android:textColor="@color/black"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp"
+                android:backgroundTint="@color/white"
+                app:rippleColor="@color/black"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InventoryPage">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/global_logo_background"
+        android:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/global_logo_background_top_texture_repeating"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/appNameBackgroundBlur"
+        android:layout_width="0dp"
+        android:layout_height="170dp"
+        android:layout_marginBottom="-50dp"
+        android:background="@drawable/global_app_name_background_blur"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@id/sectionInventory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/sectionInventory"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/global_section_container_card"
+        android:outlineSpotShadowColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appName" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sectionInventoryContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/sectionInventory"
+        app:layout_constraintEnd_toEndOf="@id/sectionInventory"
+        app:layout_constraintStart_toStartOf="@id/sectionInventory"
+        app:layout_constraintTop_toTopOf="@id/sectionInventory">
+
+
+        <TextView
+            android:id="@+id/inventoryText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/inventory"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            android:transitionName="sectionAnimation"
+            app:layout_constraintEnd_toEndOf="@id/sectionInventoryContainer"
+            app:layout_constraintStart_toStartOf="@id/sectionInventoryContainer"
+            app:layout_constraintTop_toTopOf="@id/sectionInventoryContainer" />
+
+        <!--        <androidx.cardview.widget.CardView-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="0dp"-->
+        <!--            app:layout_constraintTop_toBottomOf="@id/inventoryText"-->
+        <!--            app:layout_constraintStart_toStartOf="@id/sectionInventoryContainer"-->
+        <!--            app:layout_constraintEnd_toEndOf="@id/sectionInventoryContainer"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@id/sectionInventoryContainer"-->
+        <!--            android:layout_marginBottom="30dp"-->
+        <!--            android:layout_marginTop="30dp"-->
+        <!--            android:layout_marginStart="10dp"-->
+        <!--            android:layout_marginEnd="10dp"-->
+        <!--            app:cardCornerRadius="50dp">-->
+
+
+        <!--        </androidx.cardview.widget.CardView>-->
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintTop_toBottomOf="@id/inventoryText"
+            app:layout_constraintStart_toStartOf="@id/sectionInventoryContainer"
+            app:layout_constraintEnd_toEndOf="@id/sectionInventoryContainer"
+            app:layout_constraintBottom_toTopOf="@id/addItemToInventory"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchInventoryItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/global_container_border"
+                app:queryHint="Search Inventory"
+                app:iconifiedByDefault="false"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/inventoryItemCardsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/global_container_border"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:requiresFadingEdge="vertical"
+                android:fadingEdge="vertical"
+                android:fadingEdgeLength="10dp"
+                tools:layout_editor_absoluteY="37dp">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addItemToInventory"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintTop_toBottomOf="@id/container"
+            app:layout_constraintBottom_toBottomOf="@id/sectionInventoryContainer"
+            app:layout_constraintStart_toStartOf="@id/sectionInventoryContainer"
+            app:layout_constraintEnd_toEndOf="@id/sectionInventoryContainer"
+            android:onClick="addItemToInventory"
+            app:cornerRadius="50dp"
+            app:backgroundTint="@color/black"
+
+            android:text="Add Item"/>
+
+<!--        app:strokeColor="@color/black"-->
+<!--        app:strokeWidth="2dp"-->
+<!--        app:backgroundTint="@color/white"-->
+<!--        app:rippleColor="@color/black"-->
+<!--        android:textColor="@color/black"-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

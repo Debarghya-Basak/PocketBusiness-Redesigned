@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="blackTransparentSixty">#99000000</color>
+    <color name="blackTransparentFifty">#80000000</color>
+
+    <color name="white">#FFFFFFFF</color>
+    <color name="whiteTransparentFifty">#80FFFFFF</color>
+
+    <color name="grey">#808080</color>
+
+    <color name="backgroundaccentcolor">#f8b195</color>
+    <color name="textureaccentcolor">#A15335</color>
+
+    <color name="selectedText">#80FFB6B6</color>
+
+</resources>
+
+<!-- #ffb6b6 -->
