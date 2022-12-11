@@ -5,6 +5,7 @@
     <string name="loginpage">Login Page</string>
     <string name="dashboard">Dashboard</string>
     <string name="inventory">Inventory</string>
+    <string name="sell">Sell</string>
 
     <integer name="FADE_IN_DURATION">400</integer>
     <integer name="SCROLL_IN_FROM_BOTTOM_DURATION">400</integer>

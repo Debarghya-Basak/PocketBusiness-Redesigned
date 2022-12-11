@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SellPage">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/global_logo_background"
+        android:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/global_logo_background_top_texture_repeating"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/appNameBackgroundBlur"
+        android:layout_width="0dp"
+        android:layout_height="170dp"
+        android:layout_marginBottom="-50dp"
+        android:background="@drawable/global_app_name_background_blur"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@id/sectionSell"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/sectionSell"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/global_section_container_card"
+        android:outlineSpotShadowColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appName" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sectionSellContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/sectionSell"
+        app:layout_constraintEnd_toEndOf="@id/sectionSell"
+        app:layout_constraintStart_toStartOf="@id/sectionSell"
+        app:layout_constraintTop_toTopOf="@id/sectionSell">
+
+        <TextView
+            android:id="@+id/sellText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/sell"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            android:transitionName="sectionAnimation"
+            app:layout_constraintEnd_toEndOf="@id/sectionSellContainer"
+            app:layout_constraintStart_toStartOf="@id/sectionSellContainer"
+            app:layout_constraintTop_toTopOf="@id/sectionSellContainer" />
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintTop_toBottomOf="@id/sellText"
+            app:layout_constraintStart_toStartOf="@id/sectionSellContainer"
+            app:layout_constraintEnd_toEndOf="@id/sectionSellContainer"
+            app:layout_constraintBottom_toTopOf="@+id/actionButtonContainer"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchSellItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/global_container_border"
+                app:queryHint="Search Inventory"
+                app:iconifiedByDefault="false"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/sellItemCardsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/global_container_border"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:requiresFadingEdge="vertical"
+                android:fadingEdge="vertical"
+                android:fadingEdgeLength="10dp"
+                tools:layout_editor_absoluteY="37dp">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/actionButtonContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/container"
+            app:layout_constraintBottom_toBottomOf="@id/sectionSellContainer"
+            app:layout_constraintStart_toStartOf="@id/sectionSellContainer"
+            app:layout_constraintEnd_toEndOf="@id/sectionSellContainer"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp">
+
+            <!--TODO: Add function to the sell page buttons-->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/scanQRAddItemToSell"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:onClick="scanQRAddItemToSell"
+                app:cornerRadius="50dp"
+                app:backgroundTint="@color/black"
+
+                android:text="scan QR"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/manualAddItemToSell"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:onClick="addItemToInventory"
+                app:cornerRadius="50dp"
+                app:backgroundTint="@color/white"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp"
+                android:textColor="@color/black"
+
+                android:text="Add Manually"/>
+
+        </LinearLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
