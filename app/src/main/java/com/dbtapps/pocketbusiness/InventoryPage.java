@@ -83,7 +83,7 @@ public class InventoryPage extends AppCompatActivity {
             @Override
             public boolean onQueryTextChange(String newText) {
 
-                //TODO: new filtered array deletes the existing items too. FIX IT!!
+                //TODO: new filtered array deletes the existing items too. FIX IT!! ------> DONE
 
                 if(newText.length() != 0) {
 

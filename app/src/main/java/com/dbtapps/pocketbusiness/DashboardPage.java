@@ -49,6 +49,22 @@ public class DashboardPage extends AppCompatActivity {
 
     }
 
+    public void startDuesPage(View v){
+        Intent intent = new Intent(DashboardPage.this, InventoryPage.class);
+
+        //ANIMATION SECTION ------------------------------------------------------------------------
+        sectionDashboardContainer.animate().setDuration(MainActivity.GLOBAL_FADE_ANIMATION_DURATION).alpha(0);
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(intent);
+            }
+        },MainActivity.GLOBAL_FADE_ANIMATION_DURATION);
+        //ANIMATION SECTION END --------------------------------------------------------------------
+    }
+
     public void startSellPage(View v){
         Intent intent = new Intent(DashboardPage.this, SellPage.class);
 
