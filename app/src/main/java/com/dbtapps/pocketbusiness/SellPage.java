@@ -5,6 +5,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 
@@ -34,6 +35,15 @@ public class SellPage extends AppCompatActivity {
         //TODO: Make scanQRAddItemToSell and delete this temporary function
         Intent intent = new Intent(SellPage.this, DashboardPage.class);
         startActivity(intent);
+
+    }
+
+    public void addItemManually(View v){
+        LayoutInflater inflater = getLayoutInflater();
+        View bottomDialogBoxView = inflater.inflate(R.layout.add_manually_sell_page_dialog_box, null);
+
+        BottomDialogBox bottomDialogBox = new BottomDialogBox(this, bottomDialogBoxView);
+        bottomDialogBox.showDialogBox();
 
     }
 }

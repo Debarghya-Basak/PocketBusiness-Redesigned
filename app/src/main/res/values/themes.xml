@@ -75,7 +75,6 @@
         <item name="android:textColorHighlight">@color/selectedText</item>
         <item name="android:textColorLink">@color/selectedText</item>
         <item name="android:textCursorDrawable">@drawable/global_cursor_color</item>
-
     </style>
 
     <style name="ErrorTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
@@ -98,6 +97,5 @@
         <item name="android:windowExitAnimation">@android:anim/fade_out</item>
 
     </style>
-
 
 </resources>

@@ -69,6 +69,7 @@ public class InventoryItemRecyclerViewAdapter extends RecyclerView.Adapter<Inven
             e.printStackTrace();
         }
 
+
         holder.qrCodeInventoryItemCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

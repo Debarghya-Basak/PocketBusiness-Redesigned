@@ -156,7 +156,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
-                android:onClick="addItemToInventory"
+                android:onClick="addItemManually"
                 app:cornerRadius="50dp"
                 app:backgroundTint="@color/white"
                 app:strokeColor="@color/black"
