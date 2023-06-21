@@ -113,7 +113,7 @@ public class SellPage extends AppCompatActivity {
                 ArrayList<InventoryItemModel> searchedList = new ArrayList<InventoryItemModel>();
                 for(InventoryItemModel model : LoadInventoryData.inventoryItems){
 
-                    if(model.name.toLowerCase().contains(newText) || (model.id+"").contains(newText))
+                    if(model.name.toLowerCase().contains(newText.toLowerCase()) || (model.id+"").contains(newText))
                         searchedList.add(model);
 
                 }

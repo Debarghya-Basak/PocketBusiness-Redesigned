@@ -7,8 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.imageview.ShapeableImageView;
@@ -48,6 +50,13 @@ public class SellPageBottomDialogBoxItemRecyclerViewAdapter extends RecyclerView
         holder.unitSellPageBottomDialogItemCard.setText(inventoryItems.get(position).unit+"");
         holder.idSellPageBottomDialogItemCard.setText(inventoryItems.get(position).id+"");
 
+        holder.addCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("Debug", "Clicked : " + holder.nameSellPageBottomDialogItemCard.getText().toString());
+            }
+        });
+
         Log.d("Debug", "Bottom Dialog Box : " + inventoryItems.get(position).name);
     }
 
@@ -59,6 +68,7 @@ public class SellPageBottomDialogBoxItemRecyclerViewAdapter extends RecyclerView
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView nameSellPageBottomDialogItemCard, costPriceSellPageBottomDialogItemCard, sellPriceSellPageBottomDialogItemCard, quantitySellPageBottomDialogItemCard, unitSellPageBottomDialogItemCard, idSellPageBottomDialogItemCard;
+        Button addCard;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -69,6 +79,8 @@ public class SellPageBottomDialogBoxItemRecyclerViewAdapter extends RecyclerView
             quantitySellPageBottomDialogItemCard = (TextView) itemView.findViewById(R.id.sellPage_bottomDialog_quantity);
             unitSellPageBottomDialogItemCard = (TextView) itemView.findViewById(R.id.sellPage_bottomDialog_unit);
             idSellPageBottomDialogItemCard = (TextView) itemView.findViewById(R.id.sellPage_bottomDialog_id);
+
+            addCard = (Button) itemView.findViewById(R.id.sellPage_BottomDialogBox_AddButton);
         }
     }
 
