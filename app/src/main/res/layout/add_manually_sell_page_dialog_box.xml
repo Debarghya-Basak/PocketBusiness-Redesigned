@@ -50,7 +50,7 @@
 
 
             <androidx.appcompat.widget.SearchView
-                android:id="@+id/searchViewIcon"
+                android:id="@+id/searchView_BottomDialogBox_SellPage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
