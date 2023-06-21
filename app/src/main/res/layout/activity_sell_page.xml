@@ -97,14 +97,14 @@
             app:layout_constraintBottom_toTopOf="@+id/actionButtonContainer"
             android:orientation="vertical">
 
-            <androidx.appcompat.widget.SearchView
-                android:id="@+id/searchSellItems"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/global_container_border"
-                app:queryHint="Search Inventory"
-                app:iconifiedByDefault="false"/>
+<!--            <androidx.appcompat.widget.SearchView-->
+<!--                android:id="@+id/searchSellItems"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                android:background="@drawable/global_container_border"-->
+<!--                app:queryHint="Search Inventory"-->
+<!--                app:iconifiedByDefault="false"/>-->
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/sellItemCardsContainer"

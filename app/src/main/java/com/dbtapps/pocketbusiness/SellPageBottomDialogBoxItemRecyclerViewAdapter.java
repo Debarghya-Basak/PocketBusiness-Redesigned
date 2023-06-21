@@ -72,11 +72,11 @@ public class SellPageBottomDialogBoxItemRecyclerViewAdapter extends RecyclerView
                 SellPage.itemEntryFlag = true;
 
                 ViewGroup.LayoutParams recyclerViewLayoutEdit = recyclerView.getLayoutParams();
-                recyclerViewLayoutEdit.height = 1;
+                recyclerViewLayoutEdit.height = 0;
                 recyclerView.setLayoutParams(recyclerViewLayoutEdit);
 
                 ViewGroup.LayoutParams searchViewLayoutEdit = searchView.getLayoutParams();
-                searchViewLayoutEdit.height = 1;
+                searchViewLayoutEdit.height = 0;
                 searchView.setLayoutParams(searchViewLayoutEdit);
 
                 sellPageDialogBoxName.setText(inventoryItems.get(position).name);
