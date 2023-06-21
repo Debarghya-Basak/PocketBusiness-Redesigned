@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
 
@@ -28,6 +29,9 @@ public class SellPage extends AppCompatActivity {
     SearchView search;
     ArrayList<InventoryItemModel> sellList;
     TextView sellPageDialogBoxName, sellPageDialogBoxCostPrice, sellPageDialogBoxSellPrice, sellPageDialogBoxQuantity, sellPageDialogBoxUnit, sellPageDialogBoxID;
+    TextInputEditText quantityEditText;
+    static InventoryItemModel sellInventoryItemModel = null;
+    static boolean itemEntryFlag = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +84,8 @@ public class SellPage extends AppCompatActivity {
         sellPageDialogBoxUnit = bottomDialogBoxView.findViewById(R.id.sellPage_BottomDialogBox_ShowUnit);
         sellPageDialogBoxID = bottomDialogBoxView.findViewById(R.id.sellPage_BottomDialogBox_ShowID);
 
+        quantityEditText = bottomDialogBoxView.findViewById(R.id.enterQuantitySellPageDialogBox);
+
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,6 +96,19 @@ public class SellPage extends AppCompatActivity {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if(itemEntryFlag) {
+                    itemEntryFlag = false;
+
+                    sellList.add(sellInventoryItemModel);
+                    //TODO: Add sell list adapter
+
+                    bottomDialogBox.dismissDialogBox();
+                    Toast.makeText(SellPage.this, "Item added to bill", Toast.LENGTH_SHORT).show();
+                    Log.d("Debug", "Add Button Clicked : " + sellInventoryItemModel.name);
+
+                    sellInventoryItemModel = null;
+                }
 
             }
         });
@@ -102,7 +121,7 @@ public class SellPage extends AppCompatActivity {
 
     private void loadBottomDialogBoxItems(ArrayList<InventoryItemModel> loadItems) {
 
-        SellPageBottomDialogBoxItemRecyclerViewAdapter adapter = new SellPageBottomDialogBoxItemRecyclerViewAdapter(context, loadItems, bottomDialogItemsRecyclerView, search,sellPageDialogBoxName, sellPageDialogBoxCostPrice, sellPageDialogBoxSellPrice, sellPageDialogBoxQuantity, sellPageDialogBoxUnit, sellPageDialogBoxID);
+        SellPageBottomDialogBoxItemRecyclerViewAdapter adapter = new SellPageBottomDialogBoxItemRecyclerViewAdapter(context, loadItems, bottomDialogItemsRecyclerView, search,sellPageDialogBoxName, sellPageDialogBoxCostPrice, sellPageDialogBoxSellPrice, sellPageDialogBoxQuantity, sellPageDialogBoxUnit, sellPageDialogBoxID, quantityEditText);
         bottomDialogItemsRecyclerView.setAdapter(adapter);
         bottomDialogItemsRecyclerView.setLayoutManager(new LinearLayoutManager(context));
         Toast.makeText(context, "Loaded Dialog Box Items", Toast.LENGTH_SHORT).show();

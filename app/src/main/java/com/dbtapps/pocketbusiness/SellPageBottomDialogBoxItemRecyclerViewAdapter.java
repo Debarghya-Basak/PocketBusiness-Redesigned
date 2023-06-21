@@ -15,6 +15,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.imageview.ShapeableImageView;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
 
@@ -25,10 +26,10 @@ public class SellPageBottomDialogBoxItemRecyclerViewAdapter extends RecyclerView
 
     RecyclerView recyclerView;
     SearchView searchView;
-    InventoryItemModel sellInventoryItemModel;
     TextView sellPageDialogBoxName,sellPageDialogBoxCostPrice,sellPageDialogBoxSellPrice,sellPageDialogBoxQuantity,sellPageDialogBoxUnit,sellPageDialogBoxID;
+    TextInputEditText quantityEditText;
 
-    public SellPageBottomDialogBoxItemRecyclerViewAdapter(Context context, ArrayList<InventoryItemModel> inventoryItems, RecyclerView recyclerView, SearchView searchView,TextView sellPageDialogBoxName, TextView sellPageDialogBoxCostPrice, TextView sellPageDialogBoxSellPrice, TextView sellPageDialogBoxQuantity, TextView sellPageDialogBoxUnit, TextView sellPageDialogBoxID){
+    public SellPageBottomDialogBoxItemRecyclerViewAdapter(Context context, ArrayList<InventoryItemModel> inventoryItems, RecyclerView recyclerView, SearchView searchView,TextView sellPageDialogBoxName, TextView sellPageDialogBoxCostPrice, TextView sellPageDialogBoxSellPrice, TextView sellPageDialogBoxQuantity, TextView sellPageDialogBoxUnit, TextView sellPageDialogBoxID, TextInputEditText quantityEditText){
         this.context = context;
         this.inventoryItems = inventoryItems;
         this.recyclerView = recyclerView;
@@ -39,6 +40,7 @@ public class SellPageBottomDialogBoxItemRecyclerViewAdapter extends RecyclerView
         this.sellPageDialogBoxQuantity = sellPageDialogBoxQuantity;
         this.sellPageDialogBoxUnit = sellPageDialogBoxUnit;
         this.sellPageDialogBoxID = sellPageDialogBoxID;
+        this.quantityEditText = quantityEditText;
     }
 
 
@@ -66,7 +68,8 @@ public class SellPageBottomDialogBoxItemRecyclerViewAdapter extends RecyclerView
             @Override
             public void onClick(View v) {
 
-                sellInventoryItemModel = inventoryItems.get(position);
+                SellPage.sellInventoryItemModel = inventoryItems.get(position);
+                SellPage.itemEntryFlag = true;
 
                 ViewGroup.LayoutParams recyclerViewLayoutEdit = recyclerView.getLayoutParams();
                 recyclerViewLayoutEdit.height = 1;
