@@ -9,6 +9,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toast;
+
+import com.google.android.material.button.MaterialButton;
 
 public class SellPage extends AppCompatActivity {
 
@@ -47,8 +50,20 @@ public class SellPage extends AppCompatActivity {
         LayoutInflater inflater = getLayoutInflater();
         View bottomDialogBoxView = inflater.inflate(R.layout.add_manually_sell_page_dialog_box, null);
 
+        MaterialButton cancelButton = (MaterialButton) bottomDialogBoxView.findViewById(R.id.cancelButton_addManuallySellPage);
+        MaterialButton addButton = (MaterialButton) bottomDialogBoxView.findViewById(R.id.addButton_addManuallySellPage);
+
         BottomDialogBox bottomDialogBox = new BottomDialogBox(this, bottomDialogBoxView);
         bottomDialogBox.showDialogBox();
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bottomDialogBox.dismissDialogBox();
+            }
+        });
+
+
 
     }
 }

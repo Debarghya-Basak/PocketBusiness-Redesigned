@@ -128,8 +128,12 @@ public class LoginPage extends AppCompatActivity {
 
     public void checkAllDetails(View view){
 
-        String email = editTextEmailAddress.getText().toString();
-        String password = editTextPassword.getText().toString();
+        //TODO: ENABLE EMAIL AND PASSWORD FROM TEXT FIELDS
+//        String email = editTextEmailAddress.getText().toString();
+//        String password = editTextPassword.getText().toString();
+
+        String email = "sampleemail@sample.com";
+        String password = "sample123";
 
         if(!checkForError(email,password)){
             return;
