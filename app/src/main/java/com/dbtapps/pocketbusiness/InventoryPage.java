@@ -31,12 +31,9 @@ import java.util.List;
 public class InventoryPage extends AppCompatActivity {
 
     ConstraintLayout sectionInventoryContainer;
-    public static ArrayList<InventoryItemModel> inventoryItems;
-    LoadingDialogBox loadingDialogBox;
     RecyclerView inventoryItemCardsContainer;
     SearchView searchInventoryItems;
     Context context;
-    public static long totalInventoryItems;
     public static boolean searchFlag;
 
     @Override
@@ -48,9 +45,6 @@ public class InventoryPage extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         sectionInventoryContainer = (ConstraintLayout) findViewById(R.id.sectionInventoryContainer);
-
-        inventoryItems = new ArrayList<>();
-        loadingDialogBox = new LoadingDialogBox(this);
 
         inventoryItemCardsContainer = (RecyclerView) findViewById(R.id.inventoryItemCardsContainer);
         searchInventoryItems =  (SearchView) findViewById(R.id.searchInventoryItems);
@@ -64,11 +58,19 @@ public class InventoryPage extends AppCompatActivity {
         sectionInventoryContainer.animate().setDuration(MainActivity.GLOBAL_FADE_ANIMATION_DURATION).alpha(1);
         //ANIMATION SECTION END --------------------------------------------------------------------
 
-        loadingDialogBox.showDialogBox();
-        loadInventoryData();
+        loadRecyclerView();
 
         startSearchItemListener();
 
+
+    }
+
+    public void loadRecyclerView(){
+
+        InventoryItemRecyclerViewAdapter adapter = new InventoryItemRecyclerViewAdapter(context, LoadInventoryData.inventoryItems);
+        inventoryItemCardsContainer.setAdapter(adapter);
+        inventoryItemCardsContainer.setLayoutManager(new LinearLayoutManager(context));
+        Log.d("Debug","Data loaded to inventory");
 
     }
 
@@ -90,9 +92,9 @@ public class InventoryPage extends AppCompatActivity {
                     newText = newText.toLowerCase();
                     ArrayList<InventoryItemModel> filteredInventoryItems = new ArrayList<>();
 
-                    for (int i = 0; i < inventoryItems.size(); i++) {
-                        if (inventoryItems.get(i).name.toLowerCase().contains(newText))
-                            filteredInventoryItems.add(inventoryItems.get(i));
+                    for (int i = 0; i < LoadInventoryData.inventoryItems.size(); i++) {
+                        if (LoadInventoryData.inventoryItems.get(i).name.toLowerCase().contains(newText))
+                            filteredInventoryItems.add(LoadInventoryData.inventoryItems.get(i));
 
                     }
 
@@ -106,7 +108,7 @@ public class InventoryPage extends AppCompatActivity {
 
                     searchFlag = false;
                     Toast.makeText(context, searchFlag + "", Toast.LENGTH_SHORT).show();
-                    InventoryItemRecyclerViewAdapter adapter = new InventoryItemRecyclerViewAdapter(context, inventoryItems);
+                    InventoryItemRecyclerViewAdapter adapter = new InventoryItemRecyclerViewAdapter(context, LoadInventoryData.inventoryItems);
                     inventoryItemCardsContainer.setAdapter(adapter);
                     inventoryItemCardsContainer.setLayoutManager(new LinearLayoutManager(context));
 
@@ -119,57 +121,7 @@ public class InventoryPage extends AppCompatActivity {
 
     }
 
-    public void loadInventoryData() {
 
-        MainActivity.firebaseDatabase.getReference().child("user_data").child(MainActivity.userID).child("inventory").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-
-                if(task.isSuccessful()){
-
-                    DataSnapshot dataSnapshot = task.getResult();
-                    totalInventoryItems = dataSnapshot.getChildrenCount();
-                    Iterable<DataSnapshot> iterableItemDataArray = dataSnapshot.getChildren();
-
-                    for (DataSnapshot itemDataArray : iterableItemDataArray){
-
-                        List<Double> cost_price = new ArrayList<>();
-                        List<Double> quantity = new ArrayList<>();
-                        int id = Integer.parseInt(itemDataArray.child("id").getValue().toString());
-                        String name = itemDataArray.child("name").getValue().toString();
-                        double sell_price = Double.parseDouble(itemDataArray.child("sell_price").getValue().toString());
-                        String unit = itemDataArray.child("unit").getValue().toString();
-
-                        Iterable<DataSnapshot> iterableCPArray =  itemDataArray.child("cost_price").getChildren();
-                        for (DataSnapshot itemDataCP : iterableCPArray){
-                            cost_price.add(Double.parseDouble(itemDataCP.getValue().toString()));
-                        }
-
-                        Iterable<DataSnapshot> iterableQuantityArray =  itemDataArray.child("quantity").getChildren();
-                        for (DataSnapshot itemDataQuantity : iterableQuantityArray){
-                            quantity.add(Double.parseDouble(itemDataQuantity.getValue().toString()));
-                        }
-
-                        Log.d("GlobalDebug", id + ", "+ name + ", "+ unit + ", "+ cost_price + ", "+ sell_price + ", "+ quantity);
-
-                        inventoryItems.add(new InventoryItemModel(id,name, unit, cost_price, sell_price, quantity));
-
-                    }
-
-                    InventoryItemRecyclerViewAdapter adapter = new InventoryItemRecyclerViewAdapter(context, inventoryItems);
-                    inventoryItemCardsContainer.setAdapter(adapter);
-                    inventoryItemCardsContainer.setLayoutManager(new LinearLayoutManager(context));
-
-                    loadingDialogBox.dismissDialogBox();
-                }
-                else{
-                    Toast.makeText(InventoryPage.this, "Error in fetching data from server.", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });
-
-    }
 
     public void addItemToInventory(View view){
 
@@ -207,13 +159,13 @@ public class InventoryPage extends AppCompatActivity {
 
 
                 InventoryItemModel newItemData = new InventoryItemModel(id,name,unit, cost_price,sell_price,quantity);
-                inventoryItems.add(newItemData);
-                MainActivity.firebaseDatabase.getReference().child("user_data").child(MainActivity.userID).child("inventory").child(totalInventoryItems + "").setValue(newItemData);
-                totalInventoryItems = inventoryItems.size();
+                LoadInventoryData.inventoryItems.add(newItemData);
+                MainActivity.firebaseDatabase.getReference().child("user_data").child(MainActivity.userID).child("inventory").child(LoadInventoryData.totalInventoryItems + "").setValue(newItemData);
+                LoadInventoryData.totalInventoryItems = LoadInventoryData.inventoryItems.size();
 
                 //DATA SEND END --------------------------------------------------------------------
 
-                InventoryItemRecyclerViewAdapter adapter = new InventoryItemRecyclerViewAdapter(context, inventoryItems);
+                InventoryItemRecyclerViewAdapter adapter = new InventoryItemRecyclerViewAdapter(context, LoadInventoryData.inventoryItems);
                 inventoryItemCardsContainer.setAdapter(adapter);
                 inventoryItemCardsContainer.setLayoutManager(new LinearLayoutManager(context));
 

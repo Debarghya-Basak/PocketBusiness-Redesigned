@@ -137,17 +137,17 @@ public class InventoryItemRecyclerViewAdapter extends RecyclerView.Adapter<Inven
 
                         if(InventoryPage.searchFlag) {
 
-                            InventoryPage.inventoryItems.remove(inventoryItems.get(pos));
+                            LoadInventoryData.inventoryItems.remove(inventoryItems.get(pos));
 
                             inventoryItems.remove(holder.getAdapterPosition());
                             notifyDataSetChanged();
 
                             MainActivity.firebaseDatabase.getReference().child("user_data").child(MainActivity.userID).child("inventory").removeValue();
-                            for (int i = 0; i < InventoryPage.inventoryItems.size(); i++) {
-                                MainActivity.firebaseDatabase.getReference().child("user_data").child(MainActivity.userID).child("inventory").child(i + "").setValue(InventoryPage.inventoryItems.get(i));
+                            for (int i = 0; i < LoadInventoryData.inventoryItems.size(); i++) {
+                                MainActivity.firebaseDatabase.getReference().child("user_data").child(MainActivity.userID).child("inventory").child(i + "").setValue(LoadInventoryData.inventoryItems.get(i));
                             }
 
-                            InventoryPage.totalInventoryItems = InventoryPage.inventoryItems.size();
+                            LoadInventoryData.totalInventoryItems = LoadInventoryData.inventoryItems.size();
                             bottomDialogBox.dismissDialogBox();
                             Toast.makeText(context, "Item deleted", Toast.LENGTH_SHORT).show();
 
@@ -161,7 +161,7 @@ public class InventoryItemRecyclerViewAdapter extends RecyclerView.Adapter<Inven
                                 MainActivity.firebaseDatabase.getReference().child("user_data").child(MainActivity.userID).child("inventory").child(i + "").setValue(inventoryItems.get(i));
                             }
 
-                            InventoryPage.totalInventoryItems = inventoryItems.size();
+                            LoadInventoryData.totalInventoryItems = inventoryItems.size();
 
                             bottomDialogBox.dismissDialogBox();
                             Toast.makeText(context, "Item deleted", Toast.LENGTH_SHORT).show();

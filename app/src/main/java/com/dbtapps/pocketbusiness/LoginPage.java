@@ -34,6 +34,8 @@ public class LoginPage extends AppCompatActivity {
     TextInputLayout editTextContainerEmailAddress;
     TextInputLayout editTextContainerPassword;
 
+    LoginPage context;
+
     LoadingDialogBox loadingDialogBox;
 
     @Override
@@ -53,6 +55,8 @@ public class LoginPage extends AppCompatActivity {
         sectionLoginRegisterContainer = (ConstraintLayout) findViewById(R.id.sectionLoginRegisterContainer);
 
         loadingDialogBox = new LoadingDialogBox(this);
+
+        context = this;
         //INITIALIZATION END -----------------------------------------------------------------------
 
         //ANIMATION SECTION ------------------------------------------------------------------------
@@ -139,6 +143,7 @@ public class LoginPage extends AppCompatActivity {
                 if(task.isSuccessful()) {
                     Toast.makeText(LoginPage.this, "Sign in successful", Toast.LENGTH_SHORT).show();
                     MainActivity.userID = MainActivity.firebaseAuth.getUid();
+                    LoadInventoryData.loadInventoryData(context);
                     loadingDialogBox.dismissDialogBox();
                     startDashboardPage();
                 }
