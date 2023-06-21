@@ -52,7 +52,7 @@
                         android:textColor="@color/grey"/>
 
                     <TextView
-
+                        android:id="@+id/sellPage_ItemName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="- - -"
@@ -76,7 +76,7 @@
                         android:textColor="@color/grey"/>
 
                     <TextView
-
+                        android:id="@+id/sellPage_ItemCostPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="- - -"
@@ -100,7 +100,7 @@
                         android:textColor="@color/grey"/>
 
                     <TextView
-
+                        android:id="@+id/sellPage_ItemSellPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="- - -"
@@ -124,7 +124,7 @@
                         android:textColor="@color/grey"/>
 
                     <TextView
-
+                        android:id="@+id/sellPage_ItemQuantity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="- - -"
@@ -148,7 +148,7 @@
                         android:textColor="@color/grey"/>
 
                     <TextView
-
+                        android:id="@+id/sellPage_ItemUnit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="- - -"
@@ -172,7 +172,7 @@
                         android:textColor="@color/grey"/>
 
                     <TextView
-
+                        android:id="@+id/sellPage_ItemID"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="- - -"
@@ -181,16 +181,8 @@
 
                 </LinearLayout>
 
-                <com.google.android.material.imageview.ShapeableImageView
-
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    app:strokeWidth="2dp"
-                    app:strokeColor="@color/black"/>
-
                 <com.google.android.material.button.MaterialButton
-
+                    android:id="@+id/sellPage_ItemDeleteButton"
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="20dp"
@@ -203,7 +195,7 @@
                     app:rippleColor="@color/black"/>
 
                 <com.google.android.material.button.MaterialButton
-
+                    android:id="@+id/sellPage_ItemEditButton"
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="10dp"

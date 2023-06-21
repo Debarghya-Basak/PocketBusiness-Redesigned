@@ -25,7 +25,7 @@ public class SellPage extends AppCompatActivity {
 
     ConstraintLayout sectionSellContainer;
     Context context;
-    RecyclerView bottomDialogItemsRecyclerView;
+    RecyclerView bottomDialogItemsRecyclerView, sellItemRecyclerView;
     SearchView search;
     ArrayList<InventoryItemModel> sellList;
     TextView sellPageDialogBoxName, sellPageDialogBoxCostPrice, sellPageDialogBoxSellPrice, sellPageDialogBoxQuantity, sellPageDialogBoxUnit, sellPageDialogBoxID;
@@ -45,6 +45,7 @@ public class SellPage extends AppCompatActivity {
 
         context = this;
         sellList = new ArrayList<InventoryItemModel>();
+        sellItemRecyclerView = (RecyclerView) findViewById(R.id.sellPage_RecyclerView);
         //INITIALIZATION END -----------------------------------------------------------------------
 
         //ANIMATION SECTION ------------------------------------------------------------------------
@@ -101,7 +102,10 @@ public class SellPage extends AppCompatActivity {
                     itemEntryFlag = false;
 
                     sellList.add(sellInventoryItemModel);
-                    //TODO: Add sell list adapter
+
+                    SellPageItemRecyclerViewAdapter adapter = new SellPageItemRecyclerViewAdapter(context, sellList);
+                    sellItemRecyclerView.setAdapter(adapter);
+                    sellItemRecyclerView.setLayoutManager(new LinearLayoutManager(context));
 
                     bottomDialogBox.dismissDialogBox();
                     Toast.makeText(SellPage.this, "Item added to bill", Toast.LENGTH_SHORT).show();
