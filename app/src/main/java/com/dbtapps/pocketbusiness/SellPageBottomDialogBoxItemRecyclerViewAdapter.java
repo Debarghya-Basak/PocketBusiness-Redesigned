@@ -25,13 +25,20 @@ public class SellPageBottomDialogBoxItemRecyclerViewAdapter extends RecyclerView
 
     RecyclerView recyclerView;
     SearchView searchView;
-    InventoryItemModel inventoryItemModel;
+    InventoryItemModel sellInventoryItemModel;
+    TextView sellPageDialogBoxName,sellPageDialogBoxCostPrice,sellPageDialogBoxSellPrice,sellPageDialogBoxQuantity,sellPageDialogBoxUnit,sellPageDialogBoxID;
 
-    public SellPageBottomDialogBoxItemRecyclerViewAdapter(Context context, ArrayList<InventoryItemModel> inventoryItems, RecyclerView recyclerView, SearchView searchView){
+    public SellPageBottomDialogBoxItemRecyclerViewAdapter(Context context, ArrayList<InventoryItemModel> inventoryItems, RecyclerView recyclerView, SearchView searchView,TextView sellPageDialogBoxName, TextView sellPageDialogBoxCostPrice, TextView sellPageDialogBoxSellPrice, TextView sellPageDialogBoxQuantity, TextView sellPageDialogBoxUnit, TextView sellPageDialogBoxID){
         this.context = context;
         this.inventoryItems = inventoryItems;
         this.recyclerView = recyclerView;
         this.searchView = searchView;
+        this.sellPageDialogBoxName = sellPageDialogBoxName;
+        this.sellPageDialogBoxCostPrice = sellPageDialogBoxCostPrice;
+        this.sellPageDialogBoxSellPrice = sellPageDialogBoxSellPrice;
+        this.sellPageDialogBoxQuantity = sellPageDialogBoxQuantity;
+        this.sellPageDialogBoxUnit = sellPageDialogBoxUnit;
+        this.sellPageDialogBoxID = sellPageDialogBoxID;
     }
 
 
@@ -59,6 +66,8 @@ public class SellPageBottomDialogBoxItemRecyclerViewAdapter extends RecyclerView
             @Override
             public void onClick(View v) {
 
+                sellInventoryItemModel = inventoryItems.get(position);
+
                 ViewGroup.LayoutParams recyclerViewLayoutEdit = recyclerView.getLayoutParams();
                 recyclerViewLayoutEdit.height = 1;
                 recyclerView.setLayoutParams(recyclerViewLayoutEdit);
@@ -66,6 +75,13 @@ public class SellPageBottomDialogBoxItemRecyclerViewAdapter extends RecyclerView
                 ViewGroup.LayoutParams searchViewLayoutEdit = searchView.getLayoutParams();
                 searchViewLayoutEdit.height = 1;
                 searchView.setLayoutParams(searchViewLayoutEdit);
+
+                sellPageDialogBoxName.setText(inventoryItems.get(position).name);
+                sellPageDialogBoxCostPrice.setText(inventoryItems.get(position).cost_price.get(inventoryItems.get(position).cost_price.size()-1) + "");
+                sellPageDialogBoxSellPrice.setText(inventoryItems.get(position).sell_price + "");
+                sellPageDialogBoxQuantity.setText(inventoryItems.get(position).quantity.get(inventoryItems.get(position).cost_price.size()-1) + "");
+                sellPageDialogBoxUnit.setText(inventoryItems.get(position).unit+"");
+                sellPageDialogBoxID.setText(inventoryItems.get(position).id+"");
 
 
                 Log.d("Debug", "Clicked : " + holder.nameSellPageBottomDialogItemCard.getText().toString());

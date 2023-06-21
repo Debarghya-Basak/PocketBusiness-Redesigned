@@ -102,7 +102,7 @@ public class SellPage extends AppCompatActivity {
 
     private void loadBottomDialogBoxItems(ArrayList<InventoryItemModel> loadItems) {
 
-        SellPageBottomDialogBoxItemRecyclerViewAdapter adapter = new SellPageBottomDialogBoxItemRecyclerViewAdapter(context, loadItems, bottomDialogItemsRecyclerView, search);
+        SellPageBottomDialogBoxItemRecyclerViewAdapter adapter = new SellPageBottomDialogBoxItemRecyclerViewAdapter(context, loadItems, bottomDialogItemsRecyclerView, search,sellPageDialogBoxName, sellPageDialogBoxCostPrice, sellPageDialogBoxSellPrice, sellPageDialogBoxQuantity, sellPageDialogBoxUnit, sellPageDialogBoxID);
         bottomDialogItemsRecyclerView.setAdapter(adapter);
         bottomDialogItemsRecyclerView.setLayoutManager(new LinearLayoutManager(context));
         Toast.makeText(context, "Loaded Dialog Box Items", Toast.LENGTH_SHORT).show();
