@@ -11,6 +11,7 @@
         android:id="@+id/layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="20sp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="@id/container"
@@ -44,54 +45,39 @@
             app:layout_constraintStart_toStartOf="@id/container"
             app:layout_constraintEnd_toEndOf="@id/container"
             app:layout_constraintTop_toBottomOf="@id/HeaderText"
-            app:layout_constraintBottom_toBottomOf="@id/container">>
+            app:layout_constraintBottom_toBottomOf="@id/container"
+            android:orientation="horizontal">
 
 
-            <SearchView
+            <androidx.appcompat.widget.SearchView
                 android:id="@+id/searchViewIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:background="@drawable/global_container_border"
+                app:defaultQueryHint="Search"
+                app:iconifiedByDefault="false"
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="250sp"
-                android:layout_height="wrap_content"
-                app:boxBackgroundMode="outline"
-                app:boxCornerRadiusTopStart="30sp"
-                app:boxCornerRadiusTopEnd="30sp"
-                app:boxCornerRadiusBottomStart="30sp"
-                app:boxCornerRadiusBottomEnd="30sp"
-                app:boxStrokeColor="@color/black"
-                app:boxStrokeWidth="2sp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:textColor="@color/black"
-                    >
-
-
-                </com.google.android.material.textfield.TextInputEditText>
-
-
-
-            </com.google.android.material.textfield.TextInputLayout>
+                />
 
         </LinearLayout>
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_SellPageBottomDialogBox_addManually"
+            android:layout_width="match_parent"
+            android:layout_height="200sp"
+            android:paddingBottom="20sp"
+            android:paddingTop="20sp"
+            android:requiresFadingEdge="vertical"
+            android:fadingEdge="vertical"
+            android:fadingEdgeLength="50sp"
+            android:background="@drawable/global_container_border">
 
 
-            </androidx.recyclerview.widget.RecyclerView>
+        </androidx.recyclerview.widget.RecyclerView>
 
 
-        </ScrollView>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -114,8 +100,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_horizontal"
-            android:layout_weight="0"
-            android:layout_margin="20sp">
+            android:layout_weight="0">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/addButton_addManuallySellPage"

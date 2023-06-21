@@ -52,7 +52,7 @@
                         android:textColor="@color/grey"/>
 
                     <TextView
-
+                        android:id="@+id/sellPage_bottomDialog_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="- - -"
@@ -76,7 +76,7 @@
                         android:textColor="@color/grey"/>
 
                     <TextView
-
+                        android:id="@+id/sellPage_bottomDialog_costPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="- - -"
@@ -100,7 +100,7 @@
                         android:textColor="@color/grey"/>
 
                     <TextView
-
+                        android:id="@+id/sellPage_bottomDialog_sellPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="- - -"
@@ -124,7 +124,7 @@
                         android:textColor="@color/grey"/>
 
                     <TextView
-
+                        android:id="@+id/sellPage_bottomDialog_quantity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="- - -"
@@ -148,7 +148,7 @@
                         android:textColor="@color/grey"/>
 
                     <TextView
-
+                        android:id="@+id/sellPage_bottomDialog_unit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="- - -"
@@ -172,7 +172,7 @@
                         android:textColor="@color/grey"/>
 
                     <TextView
-
+                        android:id="@+id/sellPage_bottomDialog_id"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="- - -"

@@ -2,6 +2,8 @@ package com.dbtapps.pocketbusiness;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,6 +19,8 @@ public class SellPage extends AppCompatActivity {
 
     ConstraintLayout sectionSellContainer;
     Context context;
+
+    RecyclerView bottomDialogItemsRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +60,10 @@ public class SellPage extends AppCompatActivity {
         BottomDialogBox bottomDialogBox = new BottomDialogBox(this, bottomDialogBoxView);
         bottomDialogBox.showDialogBox();
 
+        bottomDialogItemsRecyclerView = (RecyclerView) bottomDialogBoxView.findViewById(R.id.recyclerView_SellPageBottomDialogBox_addManually);
+
+        loadBottomDialogBoxItems();
+
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,7 +71,23 @@ public class SellPage extends AppCompatActivity {
             }
         });
 
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
+
+
+
+    }
+
+    private void loadBottomDialogBoxItems() {
+
+        SellPageBottomDialogBoxItemRecyclerViewAdapter adapter = new SellPageBottomDialogBoxItemRecyclerViewAdapter(context, LoadInventoryData.inventoryItems);
+        bottomDialogItemsRecyclerView.setAdapter(adapter);
+        bottomDialogItemsRecyclerView.setLayoutManager(new LinearLayoutManager(context));
+        Toast.makeText(context, "Loaded Dialog Box Items", Toast.LENGTH_SHORT).show();
 
     }
 }
