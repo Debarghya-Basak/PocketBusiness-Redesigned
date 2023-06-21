@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
@@ -25,6 +26,8 @@ public class SellPage extends AppCompatActivity {
     Context context;
     RecyclerView bottomDialogItemsRecyclerView;
     SearchView search;
+    ArrayList<InventoryItemModel> sellList;
+    TextView sellPageDialogBoxName, sellPageDialogBoxCostPrice, sellPageDialogBoxSellPrice, sellPageDialogBoxQuantity, sellPageDialogBoxUnit, sellPageDialogBoxID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,7 @@ public class SellPage extends AppCompatActivity {
         sectionSellContainer = (ConstraintLayout) findViewById(R.id.sectionSellContainer);
 
         context = this;
+        sellList = new ArrayList<InventoryItemModel>();
         //INITIALIZATION END -----------------------------------------------------------------------
 
         //ANIMATION SECTION ------------------------------------------------------------------------
@@ -69,6 +73,13 @@ public class SellPage extends AppCompatActivity {
 
         search = (SearchView) bottomDialogBoxView.findViewById(R.id.searchView_BottomDialogBox_SellPage);
 
+        sellPageDialogBoxName = bottomDialogBoxView.findViewById(R.id.sellPage_BottomDialogBox_ShowName);
+        sellPageDialogBoxCostPrice = bottomDialogBoxView.findViewById(R.id.sellPage_BottomDialogBox_ShowCostPrice);
+        sellPageDialogBoxSellPrice = bottomDialogBoxView.findViewById(R.id.sellPage_BottomDialogBox_ShowSellPrice);
+        sellPageDialogBoxQuantity = bottomDialogBoxView.findViewById(R.id.sellPage_BottomDialogBox_ShowQuantity);
+        sellPageDialogBoxUnit = bottomDialogBoxView.findViewById(R.id.sellPage_BottomDialogBox_ShowUnit);
+        sellPageDialogBoxID = bottomDialogBoxView.findViewById(R.id.sellPage_BottomDialogBox_ShowID);
+
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,7 +102,7 @@ public class SellPage extends AppCompatActivity {
 
     private void loadBottomDialogBoxItems(ArrayList<InventoryItemModel> loadItems) {
 
-        SellPageBottomDialogBoxItemRecyclerViewAdapter adapter = new SellPageBottomDialogBoxItemRecyclerViewAdapter(context, loadItems);
+        SellPageBottomDialogBoxItemRecyclerViewAdapter adapter = new SellPageBottomDialogBoxItemRecyclerViewAdapter(context, loadItems, bottomDialogItemsRecyclerView, search);
         bottomDialogItemsRecyclerView.setAdapter(adapter);
         bottomDialogItemsRecyclerView.setLayoutManager(new LinearLayoutManager(context));
         Toast.makeText(context, "Loaded Dialog Box Items", Toast.LENGTH_SHORT).show();

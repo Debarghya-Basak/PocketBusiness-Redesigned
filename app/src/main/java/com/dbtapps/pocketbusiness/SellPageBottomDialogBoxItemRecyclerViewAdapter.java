@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.SearchView;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,11 +23,15 @@ public class SellPageBottomDialogBoxItemRecyclerViewAdapter extends RecyclerView
     ArrayList<InventoryItemModel> inventoryItems;
     Context context;
 
-    public SellPageBottomDialogBoxItemRecyclerViewAdapter(Context context, ArrayList<InventoryItemModel> inventoryItems){
+    RecyclerView recyclerView;
+    SearchView searchView;
+    InventoryItemModel inventoryItemModel;
+
+    public SellPageBottomDialogBoxItemRecyclerViewAdapter(Context context, ArrayList<InventoryItemModel> inventoryItems, RecyclerView recyclerView, SearchView searchView){
         this.context = context;
         this.inventoryItems = inventoryItems;
-
-
+        this.recyclerView = recyclerView;
+        this.searchView = searchView;
     }
 
 
@@ -53,6 +58,16 @@ public class SellPageBottomDialogBoxItemRecyclerViewAdapter extends RecyclerView
         holder.addCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                ViewGroup.LayoutParams recyclerViewLayoutEdit = recyclerView.getLayoutParams();
+                recyclerViewLayoutEdit.height = 1;
+                recyclerView.setLayoutParams(recyclerViewLayoutEdit);
+
+                ViewGroup.LayoutParams searchViewLayoutEdit = searchView.getLayoutParams();
+                searchViewLayoutEdit.height = 1;
+                searchView.setLayoutParams(searchViewLayoutEdit);
+
+
                 Log.d("Debug", "Clicked : " + holder.nameSellPageBottomDialogItemCard.getText().toString());
             }
         });
