@@ -28,7 +28,8 @@ public class SellPage extends AppCompatActivity {
     RecyclerView bottomDialogItemsRecyclerView, sellItemRecyclerView;
     SearchView search;
     ArrayList<InventoryItemModel> sellList;
-    TextView sellPageDialogBoxName, sellPageDialogBoxCostPrice, sellPageDialogBoxSellPrice, sellPageDialogBoxQuantity, sellPageDialogBoxUnit, sellPageDialogBoxID;
+    ArrayList<SellListQuantityUnitModel> sellListQuantityUnit;
+    TextView sellPageDialogBoxName, sellPageDialogBoxCostPrice, sellPageDialogBoxSellPrice, sellPageDialogBoxQuantity, sellPageDialogBoxUnit, sellPageDialogBoxID, sellPageSellQuantity, sellPageSellUnit;
     TextInputEditText quantityEditText;
     static InventoryItemModel sellInventoryItemModel = null;
     static boolean itemEntryFlag = false;
@@ -102,8 +103,9 @@ public class SellPage extends AppCompatActivity {
                     itemEntryFlag = false;
 
                     sellList.add(sellInventoryItemModel);
+                    sellListQuantityUnit.add(new SellListQuantityUnitModel(Integer.parseInt(quantityEditText.getText().toString()), sellInventoryItemModel.unit));
 
-                    SellPageItemRecyclerViewAdapter adapter = new SellPageItemRecyclerViewAdapter(context, sellList);
+                    SellPageItemRecyclerViewAdapter adapter = new SellPageItemRecyclerViewAdapter(context, sellList, sellListQuantityUnit);
                     sellItemRecyclerView.setAdapter(adapter);
                     sellItemRecyclerView.setLayoutManager(new LinearLayoutManager(context));
 

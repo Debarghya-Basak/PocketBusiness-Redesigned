@@ -12,16 +12,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.button.MaterialButton;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class SellPageItemRecyclerViewAdapter extends RecyclerView.Adapter<SellPageItemRecyclerViewAdapter.MyViewHolder>{
 
     ArrayList<InventoryItemModel> inventoryItems;
+    ArrayList<SellListQuantityUnitModel> sellQuantityUnitModel;
     Context context;
 
-    public SellPageItemRecyclerViewAdapter(Context context, ArrayList<InventoryItemModel> inventoryItems){
+    public SellPageItemRecyclerViewAdapter(Context context, ArrayList<InventoryItemModel> inventoryItems, ArrayList<SellListQuantityUnitModel> sellQuantityUnitModel){
         this.context = context;
         this.inventoryItems = inventoryItems;
+        this.sellQuantityUnitModel = sellQuantityUnitModel;
     }
 
     @NonNull
@@ -43,6 +46,8 @@ public class SellPageItemRecyclerViewAdapter extends RecyclerView.Adapter<SellPa
         holder.quantitySellPageItemCard.setText(inventoryItems.get(position).quantity.get(inventoryItems.get(position).cost_price.size()-1) + "");
         holder.unitSellPageItemCard.setText(inventoryItems.get(position).unit+"");
         holder.idSellPageItemCard.setText(inventoryItems.get(position).id+"");
+        holder.sellPageSellQuantity.setText(sellQuantityUnitModel.get(position).quantity+"");
+        holder.sellPageSellUnit.setText(sellQuantityUnitModel.get(position).unit);
         
     }
 
@@ -53,7 +58,7 @@ public class SellPageItemRecyclerViewAdapter extends RecyclerView.Adapter<SellPa
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView nameSellPageItemCard, costPriceSellPageItemCard, sellPriceSellPageItemCard, quantitySellPageItemCard, unitSellPageItemCard, idSellPageItemCard;
+        TextView nameSellPageItemCard, costPriceSellPageItemCard, sellPriceSellPageItemCard, quantitySellPageItemCard, unitSellPageItemCard, idSellPageItemCard, sellPageSellQuantity, sellPageSellUnit;
 
         MaterialButton deleteCard, editCard;
         public MyViewHolder(@NonNull View itemView) {
@@ -65,6 +70,8 @@ public class SellPageItemRecyclerViewAdapter extends RecyclerView.Adapter<SellPa
             quantitySellPageItemCard = (TextView) itemView.findViewById(R.id.sellPage_ItemQuantity);
             unitSellPageItemCard = (TextView) itemView.findViewById(R.id.sellPage_ItemUnit);
             idSellPageItemCard = (TextView) itemView.findViewById(R.id.sellPage_ItemID);
+            sellPageSellQuantity = (TextView) itemView.findViewById(R.id.sellPage_ItemSellQuantity);
+            sellPageSellUnit = (TextView) itemView.findViewById(R.id.sellPage_ItemSellUnit);
 
             deleteCard = (MaterialButton) itemView.findViewById(R.id.sellPage_ItemDeleteButton);
             editCard = (MaterialButton) itemView.findViewById(R.id.sellPage_ItemEditButton);
