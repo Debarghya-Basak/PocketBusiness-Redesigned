@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class SellPage extends AppCompatActivity {
@@ -27,8 +29,8 @@ public class SellPage extends AppCompatActivity {
     Context context;
     RecyclerView bottomDialogItemsRecyclerView, sellItemRecyclerView;
     SearchView search;
-    ArrayList<InventoryItemModel> sellList;
-    ArrayList<SellListQuantityUnitModel> sellListQuantityUnit;
+    public static ArrayList<InventoryItemModel> sellList;
+    public static ArrayList<SellListQuantityUnitModel> sellListQuantityUnit;
     TextView sellPageDialogBoxName, sellPageDialogBoxCostPrice, sellPageDialogBoxSellPrice, sellPageDialogBoxQuantity, sellPageDialogBoxUnit, sellPageDialogBoxID, sellPageSellQuantity, sellPageSellUnit;
     TextInputEditText quantityEditText;
     static InventoryItemModel sellInventoryItemModel = null;
@@ -46,8 +48,22 @@ public class SellPage extends AppCompatActivity {
 
         context = this;
         sellList = new ArrayList<InventoryItemModel>();
-        sellItemRecyclerView = (RecyclerView) findViewById(R.id.sellPage_RecyclerView);
         sellListQuantityUnit = new ArrayList<SellListQuantityUnitModel>();
+        sellItemRecyclerView = (RecyclerView) findViewById(R.id.sellPage_RecyclerView);
+
+
+        //TODO: Temporary intialization
+        for(InventoryItemModel i : LoadInventoryData.inventoryItems){
+            sellList.add(i);
+            sellList.add(i);
+            sellListQuantityUnit.add(new SellListQuantityUnitModel(10,"Kg"));
+            sellListQuantityUnit.add(new SellListQuantityUnitModel(10,"Kg"));
+        }
+        SellPageItemRecyclerViewAdapter adapter = new SellPageItemRecyclerViewAdapter(context);
+        sellItemRecyclerView.setAdapter(adapter);
+        sellItemRecyclerView.setLayoutManager(new LinearLayoutManager(context));
+        //TEMPORARY INITIALIZATION END
+
         //INITIALIZATION END -----------------------------------------------------------------------
 
         //ANIMATION SECTION ------------------------------------------------------------------------
@@ -100,15 +116,14 @@ public class SellPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(itemEntryFlag) {
+                if(itemEntryFlag && !TextUtils.isEmpty(quantityEditText.getText().toString())) {
                     itemEntryFlag = false;
 
                     sellList.add(sellInventoryItemModel);
-
                     sellListQuantityUnit.add(new SellListQuantityUnitModel(Integer.parseInt(quantityEditText.getText().toString()), sellInventoryItemModel.unit));
-                    Log.d("Debug" , "Added to sell list");
 
-                    SellPageItemRecyclerViewAdapter adapter = new SellPageItemRecyclerViewAdapter(context, sellList, sellListQuantityUnit);
+
+                    SellPageItemRecyclerViewAdapter adapter = new SellPageItemRecyclerViewAdapter(context);
                     sellItemRecyclerView.setAdapter(adapter);
                     sellItemRecyclerView.setLayoutManager(new LinearLayoutManager(context));
 
