@@ -52,13 +52,38 @@ public class SellPageItemRecyclerViewAdapter extends RecyclerView.Adapter<SellPa
             @Override
             public void onClick(View v) {
 
-                Log.d("Debug", "Holder position : " + holder.getAdapterPosition() + ", position : " + position + ", SellList Item name : " + SellPage.sellList.get(position).name);
+                LayoutInflater inflater = LayoutInflater.from(context);
+                View dialogBoxView = inflater.inflate(R.layout.confirm_delete_inventory_item_dialog_box, null);
 
-                SellPage.sellList.remove(position);
-                SellPage.sellListQuantityUnit.remove(position);
-                notifyDataSetChanged();
+                Button confirmDelete = (Button) dialogBoxView.findViewById(R.id.confirmDelete);
+                Button rejectDelete = (Button) dialogBoxView.findViewById(R.id.rejectDelete);
 
-                Log.d("Debug", "Removed");
+                BottomDialogBox bottomDialogBox = new BottomDialogBox(context, dialogBoxView);
+                bottomDialogBox.showDialogBox();
+
+                confirmDelete.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Log.d("Debug", "Holder position : " + holder.getAdapterPosition() + ", position : " + position + ", SellList Item name : " + SellPage.sellList.get(position).name);
+
+                        SellPage.sellList.remove(position);
+                        SellPage.sellListQuantityUnit.remove(position);
+                        notifyDataSetChanged();
+
+                        Log.d("Debug", "Removed");
+
+                        bottomDialogBox.dismissDialogBox();
+                    }
+                });
+
+                rejectDelete.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        bottomDialogBox.dismissDialogBox();
+                    }
+                });
+
+
 
             }
         });
