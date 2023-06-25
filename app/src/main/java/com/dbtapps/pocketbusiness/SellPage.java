@@ -52,16 +52,16 @@ public class SellPage extends AppCompatActivity {
         sellItemRecyclerView = (RecyclerView) findViewById(R.id.sellPage_RecyclerView);
 
 
-        //TODO: Temporary intialization
-        for(InventoryItemModel i : LoadInventoryData.inventoryItems){
-            sellList.add(i);
-            sellList.add(i);
-            sellListQuantityUnit.add(new SellListQuantityUnitModel(10,"Kg"));
-            sellListQuantityUnit.add(new SellListQuantityUnitModel(10,"Kg"));
-        }
-        SellPageItemRecyclerViewAdapter adapter = new SellPageItemRecyclerViewAdapter(context);
-        sellItemRecyclerView.setAdapter(adapter);
-        sellItemRecyclerView.setLayoutManager(new LinearLayoutManager(context));
+        //TODO: Temporary intialization ------- temporary comment
+//        for(InventoryItemModel i : LoadInventoryData.inventoryItems){
+//            sellList.add(i);
+//            sellList.add(i);
+//            sellListQuantityUnit.add(new SellListQuantityUnitModel(10,"Kg"));
+//            sellListQuantityUnit.add(new SellListQuantityUnitModel(10,"Kg"));
+//        }
+//        SellPageItemRecyclerViewAdapter adapter = new SellPageItemRecyclerViewAdapter(context);
+//        sellItemRecyclerView.setAdapter(adapter);
+//        sellItemRecyclerView.setLayoutManager(new LinearLayoutManager(context));
         //TEMPORARY INITIALIZATION END
 
         //INITIALIZATION END -----------------------------------------------------------------------
@@ -76,7 +76,7 @@ public class SellPage extends AppCompatActivity {
     public void scanQRAddItemToSell(View v){
 
         //TODO: Make scanQRAddItemToSell and delete this temporary function
-        Intent intent = new Intent(SellPage.this, DashboardPage.class);
+        Intent intent = new Intent(SellPage.this, QRScanner.class);
         startActivity(intent);
 
     }

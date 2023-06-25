@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,7 +18,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PocketBusiness"
         tools:targetApi="31">
-        <!--TODO: ( IF ANY CHANGES ) Reset the main activity as the MAIN file .... Change exported to false and delete the intent-filter from the testing page-->
+
+        <activity
+            android:name=".QRScanner"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar.Fullscreen.DashboardPage"/>
+
+        <activity
+            android:name=".BillPage"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar.Fullscreen.DashboardPage"/>
+        <!-- TODO: ( IF ANY CHANGES ) Reset the main activity as the MAIN file .... Change exported to false and delete the intent-filter from the testing page -->
         <activity
             android:name=".SellPage"
             android:exported="false"
