@@ -128,6 +128,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:gravity="center_vertical"
             app:layout_constraintTop_toBottomOf="@id/container"
             app:layout_constraintBottom_toBottomOf="@id/sectionSellContainer"
             app:layout_constraintStart_toStartOf="@id/sectionSellContainer"
@@ -162,8 +163,19 @@
                 app:strokeColor="@color/black"
                 app:strokeWidth="2dp"
                 android:textColor="@color/black"
-
                 android:text="Add Manually"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/billButtonSellPage"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                app:cornerRadius="50dp"
+                android:backgroundTint="@color/black"
+                android:textColor="@color/white"
+                android:text="Bill"/>
 
         </LinearLayout>
 

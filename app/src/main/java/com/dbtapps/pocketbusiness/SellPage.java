@@ -47,6 +47,7 @@ public class SellPage extends AppCompatActivity {
         context = this;
         sellList = new ArrayList<InventoryItemModel>();
         sellItemRecyclerView = (RecyclerView) findViewById(R.id.sellPage_RecyclerView);
+        sellListQuantityUnit = new ArrayList<SellListQuantityUnitModel>();
         //INITIALIZATION END -----------------------------------------------------------------------
 
         //ANIMATION SECTION ------------------------------------------------------------------------
@@ -103,7 +104,9 @@ public class SellPage extends AppCompatActivity {
                     itemEntryFlag = false;
 
                     sellList.add(sellInventoryItemModel);
+
                     sellListQuantityUnit.add(new SellListQuantityUnitModel(Integer.parseInt(quantityEditText.getText().toString()), sellInventoryItemModel.unit));
+                    Log.d("Debug" , "Added to sell list");
 
                     SellPageItemRecyclerViewAdapter adapter = new SellPageItemRecyclerViewAdapter(context, sellList, sellListQuantityUnit);
                     sellItemRecyclerView.setAdapter(adapter);

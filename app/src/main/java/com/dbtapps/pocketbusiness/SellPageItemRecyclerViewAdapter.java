@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -48,6 +49,20 @@ public class SellPageItemRecyclerViewAdapter extends RecyclerView.Adapter<SellPa
         holder.idSellPageItemCard.setText(inventoryItems.get(position).id+"");
         holder.sellPageSellQuantity.setText(sellQuantityUnitModel.get(position).quantity+"");
         holder.sellPageSellUnit.setText(sellQuantityUnitModel.get(position).unit);
+
+        holder.deleteCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, inventoryItems.get(position).name + " : Delete Button is pressed", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        holder.editCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, inventoryItems.get(position).name + " : Edit Button is Clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
         
     }
 
