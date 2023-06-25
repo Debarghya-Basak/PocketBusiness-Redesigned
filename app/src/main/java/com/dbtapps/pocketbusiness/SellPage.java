@@ -31,10 +31,12 @@ public class SellPage extends AppCompatActivity {
     SearchView search;
     public static ArrayList<InventoryItemModel> sellList;
     public static ArrayList<SellListQuantityUnitModel> sellListQuantityUnit;
+    static int QRCODE = -1;
     TextView sellPageDialogBoxName, sellPageDialogBoxCostPrice, sellPageDialogBoxSellPrice, sellPageDialogBoxQuantity, sellPageDialogBoxUnit, sellPageDialogBoxID, sellPageSellQuantity, sellPageSellUnit;
     TextInputEditText quantityEditText;
     static InventoryItemModel sellInventoryItemModel = null;
     static boolean itemEntryFlag = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,10 +124,7 @@ public class SellPage extends AppCompatActivity {
                     sellList.add(sellInventoryItemModel);
                     sellListQuantityUnit.add(new SellListQuantityUnitModel(Integer.parseInt(quantityEditText.getText().toString()), sellInventoryItemModel.unit));
 
-
-                    SellPageItemRecyclerViewAdapter adapter = new SellPageItemRecyclerViewAdapter(context);
-                    sellItemRecyclerView.setAdapter(adapter);
-                    sellItemRecyclerView.setLayoutManager(new LinearLayoutManager(context));
+                    reloadSellPageAdapter();
 
                     bottomDialogBox.dismissDialogBox();
                     Toast.makeText(SellPage.this, "Item added to bill", Toast.LENGTH_SHORT).show();
@@ -140,6 +139,13 @@ public class SellPage extends AppCompatActivity {
         loadBottomDialogBoxItems(LoadInventoryData.inventoryItems);
 
         startSearchListener();
+
+    }
+
+    public void reloadSellPageAdapter(){
+        SellPageItemRecyclerViewAdapter adapter = new SellPageItemRecyclerViewAdapter(context);
+        sellItemRecyclerView.setAdapter(adapter);
+        sellItemRecyclerView.setLayoutManager(new LinearLayoutManager(context));
 
     }
 
@@ -177,6 +183,28 @@ public class SellPage extends AppCompatActivity {
                 return false;
             }
         });
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("Debug","SellPage: On Resume");
+        if(QRCODE != -1){
+            boolean isFoundFlag = false;
+            for(InventoryItemModel i : LoadInventoryData.inventoryItems){
+                if(i.id == QRCODE) {
+                    isFoundFlag = true;
+                    sellList.add(i);
+                    //TODO: ADD DIALOG BOX TO ACCEPT QUANTITY FROM USER and then add to sellListQuantityUnit
+                    sellListQuantityUnit.add(new SellListQuantityUnitModel(10, "Kg"));
+                    reloadSellPageAdapter();
+                    QRCODE = -1;
+                }
+            }
+            if(!isFoundFlag)
+                Toast.makeText(context, "Item not found with this QRCODE", Toast.LENGTH_SHORT).show();
+        }
 
     }
 }

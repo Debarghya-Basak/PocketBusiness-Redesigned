@@ -36,7 +36,11 @@ public class QRScanner extends AppCompatActivity {
 
 
         checkCameraPermission();
-        Log.d("Debug", "camera permission taken");
+        createQRScanner();
+
+    }
+
+    private void createQRScanner() {
 
         CodeScannerView scannerView = findViewById(R.id.scanner_view);
         mCodeScanner = new CodeScanner(this, scannerView);
@@ -47,12 +51,25 @@ public class QRScanner extends AppCompatActivity {
                     @Override
                     public void run() {
                         Toast.makeText(QRScanner.this, result.getText(), Toast.LENGTH_SHORT).show();
+                        Log.d("Debug" , "QR Code message : " + result.getText());
+                        if(checkValidIntQR(result.getText())) {
+                            Log.d("Debug", "QRScanner Page: Valid QR");
+                            SellPage.QRCODE = Integer.parseInt(result.getText());
+                        }
+                        onBackPressed();
                     }
                 });
             }
         });
 
+    }
 
+    private boolean checkValidIntQR(String text) {
+        for(int i=0;i<text.length();i++){
+            if("0123456789".indexOf(text.charAt(i)) == -1)
+                return false;
+        }
+        return true;
     }
 
     private void checkCameraPermission() {

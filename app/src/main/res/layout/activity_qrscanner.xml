@@ -102,11 +102,13 @@
                 android:id="@+id/scanner_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:frameColor="@color/white"
+                app:frameColor="@color/black"
                 app:frameCornersCapRounded="true"
                 app:frameCornersRadius="50dp"
-                app:maskVisible="false"
+                app:maskVisible="true"
                 app:maskColor="@color/white"
+                app:autoFocusButtonColor="@color/black"
+                app:flashButtonColor="@color/black"
                 />
 
         </LinearLayout>
