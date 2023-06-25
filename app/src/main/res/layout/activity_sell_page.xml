@@ -192,6 +192,7 @@
             app:cornerRadius="50dp"
             android:backgroundTint="@color/black"
             android:textColor="@color/white"
+            android:onClick="startBillPage"
             android:text="Bill"/>
 
         </LinearLayout>
