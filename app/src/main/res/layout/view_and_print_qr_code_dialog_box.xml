@@ -34,11 +34,11 @@
                 android:layout_height="wrap_content"
                 android:padding="20dp"
                 android:layout_margin="10dp"
-                app:cornerRadius="50dp"
                 android:layout_weight="1"
+
                 android:text="PRINT"
-                android:backgroundTint="@color/black"
-                app:rippleColor="@color/black"/>
+
+                style="@style/StrokeButton"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/cancelButtonQrCodeInventoryDialogBox"
@@ -46,14 +46,11 @@
                 android:layout_height="wrap_content"
                 android:padding="20dp"
                 android:layout_margin="10dp"
-                app:cornerRadius="50dp"
                 android:layout_weight="1"
+
                 android:text="CANCEL"
-                android:textColor="@color/black"
-                app:strokeColor="@color/black"
-                app:strokeWidth="2dp"
-                android:backgroundTint="@color/white"
-                app:rippleColor="@color/black"/>
+
+                style="@style/FilledButton"/>
 
         </LinearLayout>
 

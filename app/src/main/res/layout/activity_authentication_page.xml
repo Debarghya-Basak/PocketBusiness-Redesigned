@@ -119,20 +119,18 @@
         android:id="@+id/loginButton"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="LOGIN"
-        android:backgroundTint="@color/white"
-        app:strokeWidth="2dp"
-        app:strokeColor="@color/black"
-        android:textColor="@color/black"
-        app:cornerRadius="50dp"
         android:padding="15dp"
-        android:onClick="startLoginPage"
-        android:transitionName="sectionAnimation"
         android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="@id/sectionLoginRegisterContainer"
         app:layout_constraintEnd_toEndOf="@id/sectionLoginRegisterContainer"
         app:layout_constraintStart_toStartOf="@id/sectionLoginRegisterContainer"
-        app:layout_constraintTop_toBottomOf="@id/welcomeText" />
+        app:layout_constraintTop_toBottomOf="@id/welcomeText"
+
+        android:transitionName="sectionAnimation"
+        android:onClick="startLoginPage"
+
+        android:text="LOGIN"
+        style="@style/StrokeButton"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/registerButton"
@@ -140,25 +138,17 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:padding="15dp"
-        android:backgroundTint="@color/black"
-        app:cornerRadius="50dp"
-
-        android:onClick="startRegistrationPage"
-        android:elevation="10dp"
-        android:text="REGISTER"
-        android:textColor="@color/white"
-        android:transitionName="sectionAnimation"
         app:layout_constraintBottom_toBottomOf="@id/sectionLoginRegisterContainer"
         app:layout_constraintEnd_toEndOf="@id/sectionLoginRegisterContainer"
         app:layout_constraintStart_toStartOf="@id/sectionLoginRegisterContainer"
         app:layout_constraintTop_toBottomOf="@id/welcomeText"
-        tools:ignore="UsingOnClickInXml" />
 
+        android:onClick="startRegistrationPage"
+        android:transitionName="sectionAnimation"
 
+        android:text="REGISTER"
 
-
-
-
+        style="@style/FilledButton"/>
 
   </androidx.constraintlayout.widget.ConstraintLayout>
 

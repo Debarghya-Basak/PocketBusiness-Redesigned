@@ -112,16 +112,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
-                app:boxStrokeColor="@color/black"
-                app:hintTextColor="@color/black"
+
                 android:hint="Enter your email address"
-                app:boxCornerRadiusTopStart="50dp"
-                app:boxCornerRadiusTopEnd="50dp"
-                app:boxCornerRadiusBottomStart="50dp"
-                app:boxCornerRadiusBottomEnd="50dp"
-                app:errorEnabled="true"
-                app:errorTextAppearance="@style/ErrorTextInputLayout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+
+                style="@style/StrokeEditTextLayout"
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -130,7 +124,6 @@
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
                     android:singleLine="true"
-                    android:textColor="@color/black"
                     />
 
 
@@ -142,18 +135,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
-                app:boxStrokeColor="@color/black"
-                app:hintTextColor="@color/black"
-                android:hint="Enter your password"
-                app:boxCornerRadiusTopStart="50dp"
-                app:boxCornerRadiusTopEnd="50dp"
-                app:boxCornerRadiusBottomStart="50dp"
-                app:boxCornerRadiusBottomEnd="50dp"
+
                 app:passwordToggleEnabled="true"
-                app:errorEnabled="true"
-                app:errorIconDrawable="@null"
-                app:errorTextAppearance="@style/ErrorTextInputLayout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+
+                android:hint="Enter your password"
+
+                style="@style/StrokeEditTextLayout"
 
                 >
 
@@ -164,8 +151,6 @@
                     android:inputType="textPassword"
                     android:selectAllOnFocus="false"
                     android:singleLine="true"
-                    android:textColor="@color/black"
-
                      />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -177,17 +162,18 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
                 android:layout_marginBottom="20dp"
-                app:cornerRadius="50dp"
-                app:backgroundTint="@color/black"
-                android:elevation="10dp"
-                android:text="LOGIN"
-                android:onClick="checkAllDetails"
-                android:transitionName="sectionAnimation"
-                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="@id/sectionLoginRegisterContainer"
                 app:layout_constraintEnd_toEndOf="@id/sectionLoginRegisterContainer"
                 app:layout_constraintStart_toStartOf="@id/sectionLoginRegisterContainer"
-                app:layout_constraintTop_toBottomOf="@id/loginText" />
+                app:layout_constraintTop_toBottomOf="@id/loginText"
+
+                android:onClick="checkAllDetails"
+                android:transitionName="sectionAnimation"
+
+                android:text="LOGIN"
+
+                style="@style/FilledButton"
+                />
 
             <TextView
                 android:layout_width="match_parent"

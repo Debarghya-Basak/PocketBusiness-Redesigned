@@ -234,13 +234,9 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="100sp"
                 android:layout_height="wrap_content"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                app:boxStrokeWidth="2sp"
-                app:boxStrokeColor="@color/black"
-                app:boxCornerRadiusTopStart="30sp"
-                app:boxCornerRadiusTopEnd="30sp"
-                app:boxCornerRadiusBottomStart="30sp"
-                app:boxCornerRadiusBottomEnd="30sp">
+
+                app:errorEnabled="false"
+                style="@style/StrokeEditTextLayout">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/enterQuantitySellPageDialogBox"

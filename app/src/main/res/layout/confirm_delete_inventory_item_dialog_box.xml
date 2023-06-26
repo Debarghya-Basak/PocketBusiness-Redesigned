@@ -44,13 +44,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_margin="10dp"
+
                 android:text="YES"
-                android:textColor="@color/black"
-                android:backgroundTint="@color/white"
-                app:strokeColor="@color/black"
-                app:strokeWidth="2dp"
-                app:cornerRadius="50dp"
-                app:rippleColor="@color/black"/>
+
+                style="@style/StrokeButton"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/rejectDelete"
@@ -58,10 +55,11 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+
                 android:text="NO"
-                android:backgroundTint="@color/black"
-                app:cornerRadius="50dp"
-                app:rippleColor="@color/black"/>
+
+                style="@style/FilledButton"
+                />
 
 
 

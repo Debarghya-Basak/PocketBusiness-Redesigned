@@ -195,13 +195,11 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="20dp"
+
                     android:text="Delete"
-                    android:textColor="@color/black"
-                    android:backgroundTint="@color/white"
-                    app:strokeColor="@color/black"
-                    app:strokeWidth="2dp"
-                    app:cornerRadius="50dp"
-                    app:rippleColor="@color/black"/>
+
+                    style="@style/StrokeButton"
+                    />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/editButtonInventoryItemCard"
@@ -209,9 +207,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="10dp"
                     android:text="Edit"
-                    android:textColor="@color/white"
-                    android:backgroundTint="@color/black"
-                    app:cornerRadius="50dp"/>
+
+                    style="@style/FilledButton"/>
 
 
             </LinearLayout>

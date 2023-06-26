@@ -135,20 +135,14 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/editTextContainerName"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginRight="50dp"
-                    android:layout_marginBottom="10dp"
+
                     android:hint="Enter your name"
-                    app:boxCornerRadiusBottomEnd="50dp"
-                    app:boxCornerRadiusBottomStart="50dp"
-                    app:boxCornerRadiusTopEnd="50dp"
-                    app:boxCornerRadiusTopStart="50dp"
-                    app:boxStrokeColor="@color/black"
-                    app:hintTextColor="@color/black">
+
+                    style="@style/StrokeEditTextLayout">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editTextName"
@@ -161,27 +155,16 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!--                app:layout_constraintBottom_toBottomOf="@id/sectionLoginRegisterContainer"-->
-                <!--                app:layout_constraintEnd_toEndOf="@id/sectionLoginRegisterContainer"-->
-                <!--                app:layout_constraintStart_toStartOf="@id/sectionLoginRegisterContainer"-->
-                <!--                app:layout_constraintTop_toBottomOf="@id/welcomeText"-->
-
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/editTextContainerPhoneNumber"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginRight="50dp"
-                    android:layout_marginBottom="10dp"
+
                     android:hint="Enter your phone number"
-                    app:boxCornerRadiusBottomEnd="50dp"
-                    app:boxCornerRadiusBottomStart="50dp"
-                    app:boxCornerRadiusTopEnd="50dp"
-                    app:boxCornerRadiusTopStart="50dp"
-                    app:boxStrokeColor="@color/black"
-                    app:hintTextColor="@color/black">
+
+                    style="@style/StrokeEditTextLayout">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editTextPhoneNumber"
@@ -216,20 +199,14 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/editTextContainerBusinessName"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginRight="50dp"
-                    android:layout_marginBottom="10dp"
+
                     android:hint="Enter your business name"
-                    app:boxCornerRadiusBottomEnd="50dp"
-                    app:boxCornerRadiusBottomStart="50dp"
-                    app:boxCornerRadiusTopEnd="50dp"
-                    app:boxCornerRadiusTopStart="50dp"
-                    app:boxStrokeColor="@color/black"
-                    app:hintTextColor="@color/black">
+
+                   style="@style/StrokeEditTextLayout">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editTextBusinessName"
@@ -244,20 +221,14 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/editTextContainerBusinessAddress"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginRight="50dp"
-                    android:layout_marginBottom="10dp"
+
                     android:hint="Enter your business address"
-                    app:boxCornerRadiusBottomEnd="50dp"
-                    app:boxCornerRadiusBottomStart="50dp"
-                    app:boxCornerRadiusTopEnd="50dp"
-                    app:boxCornerRadiusTopStart="50dp"
-                    app:boxStrokeColor="@color/black"
-                    app:hintTextColor="@color/black">
+
+                    style="@style/StrokeEditTextLayout">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editTextBusinessAddress"
@@ -272,23 +243,18 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/editTextContainerBusinessDescription"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginRight="50dp"
-                    android:layout_marginBottom="10dp"
-                    android:hint="Enter your business description"
-                    app:boxCornerRadiusBottomEnd="50dp"
-                    app:boxCornerRadiusBottomStart="50dp"
-                    app:boxCornerRadiusTopEnd="50dp"
-                    app:boxCornerRadiusTopStart="50dp"
-                    app:boxStrokeColor="@color/black"
-                    app:hintTextColor="@color/black"
+
                     app:counterEnabled="true"
                     app:counterTextColor="@color/black"
-                    app:counterMaxLength="50">
+                    app:counterMaxLength="50"
+
+                    android:hint="Enter your business description"
+
+                    style="@style/StrokeEditTextLayout">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editTextBusinessDescription"
@@ -304,20 +270,14 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/editTextContainerBusinessCity"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginRight="50dp"
-                    android:layout_marginBottom="10dp"
+
                     android:hint="Enter your business city"
-                    app:boxCornerRadiusBottomEnd="50dp"
-                    app:boxCornerRadiusBottomStart="50dp"
-                    app:boxCornerRadiusTopEnd="50dp"
-                    app:boxCornerRadiusTopStart="50dp"
-                    app:boxStrokeColor="@color/black"
-                    app:hintTextColor="@color/black">
+
+                    style="@style/StrokeEditTextLayout">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editTextBusinessCity"
@@ -333,20 +293,14 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/editTextContainerBusinessPincode"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginRight="50dp"
-                    android:layout_marginBottom="10dp"
+
                     android:hint="Enter your business address pincode"
-                    app:boxCornerRadiusBottomEnd="50dp"
-                    app:boxCornerRadiusBottomStart="50dp"
-                    app:boxCornerRadiusTopEnd="50dp"
-                    app:boxCornerRadiusTopStart="50dp"
-                    app:boxStrokeColor="@color/black"
-                    app:hintTextColor="@color/black">
+
+                    style="@style/StrokeEditTextLayout">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editTextBusinessPincode"
@@ -361,20 +315,14 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/editTextContainerBusinessPhoneNumber"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginRight="50dp"
-                    android:layout_marginBottom="10dp"
+
                     android:hint="Enter your business phone number"
-                    app:boxCornerRadiusBottomEnd="50dp"
-                    app:boxCornerRadiusBottomStart="50dp"
-                    app:boxCornerRadiusTopEnd="50dp"
-                    app:boxCornerRadiusTopStart="50dp"
-                    app:boxStrokeColor="@color/black"
-                    app:hintTextColor="@color/black">
+
+                    style="@style/StrokeEditTextLayout">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editTextBusinessPhoneNumber"
@@ -400,20 +348,14 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/editTextContainerEmailAddress"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginRight="50dp"
-                    android:layout_marginBottom="10dp"
+
                     android:hint="Enter your Email Address"
-                    app:boxCornerRadiusBottomEnd="50dp"
-                    app:boxCornerRadiusBottomStart="50dp"
-                    app:boxCornerRadiusTopEnd="50dp"
-                    app:boxCornerRadiusTopStart="50dp"
-                    app:boxStrokeColor="@color/black"
-                    app:hintTextColor="@color/black">
+
+                    style="@style/StrokeEditTextLayout">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editTextEmailAddress"
@@ -428,20 +370,14 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/editTextContainerPassword"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginRight="50dp"
-                    android:layout_marginBottom="10dp"
+
                     android:hint="Enter your password"
-                    app:boxCornerRadiusBottomEnd="50dp"
-                    app:boxCornerRadiusBottomStart="50dp"
-                    app:boxCornerRadiusTopEnd="50dp"
-                    app:boxCornerRadiusTopStart="50dp"
-                    app:boxStrokeColor="@color/black"
-                    app:hintTextColor="@color/black">
+
+                    style="@style/StrokeEditTextLayout">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editTextPassword"
@@ -473,19 +409,18 @@
                     android:layout_marginLeft="50dp"
                     android:layout_marginRight="50dp"
                     android:layout_marginTop="50dp"
-                    android:text="REGISTER"
-
-                    android:textColor="@color/white"
-
-                    android:onClick="createUserWithAllDetails"
-                    android:transitionName="sectionAnimation"
-                    app:backgroundTint="@color/black"
-                    app:cornerRadius="50dp"
                     app:layout_constraintBottom_toBottomOf="@id/sectionLoginRegisterContainer"
                     app:layout_constraintEnd_toEndOf="@id/sectionLoginRegisterContainer"
                     app:layout_constraintStart_toStartOf="@id/sectionLoginRegisterContainer"
                     app:layout_constraintTop_toBottomOf="@id/registrationText"
-                    tools:ignore="UsingOnClickInXml" />
+
+                    android:onClick="createUserWithAllDetails"
+                    android:transitionName="sectionAnimation"
+
+                    android:text="REGISTER"
+
+                    style="@style/FilledButton"/>
+
             </LinearLayout>
 
         </ScrollView>
