@@ -64,6 +64,8 @@ public class QRScanner extends AppCompatActivity {
     }
 
     private boolean checkValidIntQR(String text) {
+        if(text.equals(""))
+            return false;
         for(int i=0;i<text.length();i++){
             if("0123456789".indexOf(text.charAt(i)) == -1)
                 return false;

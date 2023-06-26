@@ -77,7 +77,10 @@
                     android:id="@+id/quantityAddItemDialogBox"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="Enter quantity"/>
+
+                    android:hint="Enter quantity"
+
+                    android:inputType="numberDecimal"/>
 
 
             </com.google.android.material.textfield.TextInputLayout>
