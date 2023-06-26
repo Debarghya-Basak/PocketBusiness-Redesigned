@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.PocketBusiness" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.PocketBusiness" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/black</item>
         <item name="colorPrimaryVariant">@color/black</item>
@@ -12,7 +12,6 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-
 
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>
@@ -26,7 +25,6 @@
         <item name="android:textColorHighlight">@color/selectedText</item>
         <item name="android:textColorLink">@color/selectedText</item>
         <item name="android:textCursorDrawable">@drawable/global_cursor_color</item>
-
     </style>
 
     <style name="StrokeButton" parent="Widget.MaterialComponents.Button">
@@ -55,6 +53,13 @@
         <item name="errorEnabled">true</item>
         <item name="errorIconDrawable">@null</item>
         <item name="errorTextAppearance">@style/ErrorTextInputLayout</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="StrokeCardLayout" parent="CardView">
+        <item name="cardCornerRadius">50dp</item>
+        <item name="android:foreground">@drawable/global_container_border</item>
+        <item name="android:backgroundTint">@color/white</item>
     </style>
 
     <style name="ErrorTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">

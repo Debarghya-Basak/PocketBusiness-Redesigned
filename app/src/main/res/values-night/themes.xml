@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.PocketBusiness" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.PocketBusiness" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/black</item>
         <item name="colorPrimaryVariant">@color/black</item>
@@ -12,6 +12,69 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:textColorHighlight">@color/selectedText</item>
+        <item name="android:textColorLink">@color/selectedText</item>
+        <item name="android:textCursorDrawable">@drawable/global_cursor_color</item>
+    </style>
+
+    <style name="StrokeButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="strokeColor">@color/black</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="cornerRadius">50dp</item>
+        <item name="rippleColor">@color/grey</item>
+    </style>
+
+    <style name="FilledButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/black</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="cornerRadius">50dp</item>
+        <item name="rippleColor">@color/grey</item>
+    </style>
+
+    <style name="StrokeEditTextLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">@color/black</item>
+        <item name="hintTextColor">@color/black</item>
+        <item name="boxCornerRadiusTopStart">50dp</item>
+        <item name="boxCornerRadiusTopEnd">50dp</item>
+        <item name="boxCornerRadiusBottomStart">50dp</item>
+        <item name="boxCornerRadiusBottomEnd">50dp</item>
+        <item name="errorEnabled">true</item>
+        <item name="errorIconDrawable">@null</item>
+        <item name="errorTextAppearance">@style/ErrorTextInputLayout</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="ErrorTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="errorTextAppearance">@style/errorTextAppearance</item>
+        <item name="errorTextColor">#ffffff</item>
+
+    </style>
+
+    <style name="errorTextAppearance" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="dialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_from_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_to_bottom</item>
+
+    </style>
+    <style name="loadingDialogAnimation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+
     </style>
 
 </resources>
