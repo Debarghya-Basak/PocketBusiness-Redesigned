@@ -115,32 +115,33 @@
         app:layout_constraintStart_toStartOf="@id/sectionLoginRegisterContainer"
         app:layout_constraintTop_toTopOf="@id/sectionLoginRegisterContainer" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/loginButton"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/global_stroke_button"
-
         android:text="LOGIN"
-
-        android:elevation="10dp"
+        android:backgroundTint="@color/white"
+        app:strokeWidth="2dp"
+        app:strokeColor="@color/black"
+        android:textColor="@color/black"
+        app:cornerRadius="50dp"
+        android:padding="15dp"
         android:onClick="startLoginPage"
         android:transitionName="sectionAnimation"
-        android:textColor="@color/black"
         android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="@id/sectionLoginRegisterContainer"
         app:layout_constraintEnd_toEndOf="@id/sectionLoginRegisterContainer"
         app:layout_constraintStart_toStartOf="@id/sectionLoginRegisterContainer"
-        app:layout_constraintTop_toBottomOf="@id/welcomeText"
-        tools:ignore="UsingOnClickInXml" />
+        app:layout_constraintTop_toBottomOf="@id/welcomeText" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/registerButton"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-
-        android:background="@drawable/global_solid_button"
+        android:padding="15dp"
+        android:backgroundTint="@color/black"
+        app:cornerRadius="50dp"
 
         android:onClick="startRegistrationPage"
         android:elevation="10dp"

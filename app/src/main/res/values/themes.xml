@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.PocketBusiness" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.PocketBusiness" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/black</item>
         <item name="colorPrimaryVariant">@color/black</item>
@@ -12,22 +12,8 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-    </style>
 
-    <style name="Theme.AppCompat.DayNight.NoActionBar.Fullscreen.MainActivity" parent="Theme.AppCompat.DayNight.NoActionBar">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowActionBar">false</item>
-        <item name="android:windowFullscreen">false</item>
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowTranslucentNavigation">true</item>
-        <item name="android:fitsSystemWindows">true</item>
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowContentTransitions">true</item>
-        <item name="android:windowAnimationStyle">@null</item>
-    </style>
 
-    <style name="Theme.AppCompat.DayNight.NoActionBar.Fullscreen.AuthenticationPage" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>
         <item name="android:windowFullscreen">false</item>
@@ -40,41 +26,7 @@
         <item name="android:textColorHighlight">@color/selectedText</item>
         <item name="android:textColorLink">@color/selectedText</item>
         <item name="android:textCursorDrawable">@drawable/global_cursor_color</item>
-        <item name="android:ambientShadowAlpha">0.5</item>
-        <item name="android:spotShadowAlpha">0.5</item>
-    </style>
 
-    <style name="Theme.MaterialComponents.DayNight.NoActionBar.Fullscreen.LoginAndRegistrationPage" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowActionBar">false</item>
-        <item name="android:windowFullscreen">false</item>
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowTranslucentNavigation">true</item>
-        <item name="android:fitsSystemWindows">true</item>
-        <item name="android:windowContentTransitions">true</item>
-        <item name="android:windowAnimationStyle">@null</item>
-        <item name="android:textColorHighlight">@color/selectedText</item>
-        <item name="android:textColorLink">@color/selectedText</item>
-        <item name="android:textCursorDrawable">@drawable/global_cursor_color</item>
-        <item name="android:ambientShadowAlpha">0.5</item>
-        <item name="android:spotShadowAlpha">0.5</item>
-
-    </style>
-
-    <style name="Theme.AppCompat.DayNight.NoActionBar.Fullscreen.DashboardPage" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowActionBar">false</item>
-        <item name="android:windowFullscreen">false</item>
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowTranslucentNavigation">true</item>
-        <item name="android:fitsSystemWindows">true</item>
-        <item name="android:windowContentTransitions">true</item>
-        <item name="android:windowAnimationStyle">@null</item>
-        <item name="android:textColorHighlight">@color/selectedText</item>
-        <item name="android:textColorLink">@color/selectedText</item>
-        <item name="android:textCursorDrawable">@drawable/global_cursor_color</item>
     </style>
 
     <style name="ErrorTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
