@@ -11,9 +11,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:foreground="@drawable/global_container_border"
-        app:cardCornerRadius="50dp"
-        >
+
+        style="@style/StrokeCardLayout">
 
         <HorizontalScrollView
             android:layout_width="match_parent"
