@@ -93,9 +93,6 @@ public class SellPage extends AppCompatActivity {
         },MainActivity.GLOBAL_FADE_ANIMATION_DURATION);
         //ANIMATION SECTION END --------------------------------------------------------------------
 
-
-
-
     }
 
     public void addItemManually(View v){
@@ -277,6 +274,21 @@ public class SellPage extends AppCompatActivity {
 
     public void startBillPage(View v){
         Toast.makeText(this, "Start Bill Page" , Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(SellPage.this, BillPage.class);
+
+        //ANIMATION SECTION ------------------------------------------------------------------------
+        sectionSellContainer.animate().setDuration(MainActivity.GLOBAL_FADE_ANIMATION_DURATION).alpha(0);
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(intent);
+            }
+        },MainActivity.GLOBAL_FADE_ANIMATION_DURATION);
+        //ANIMATION SECTION END --------------------------------------------------------------------
+
     }
 
     @Override
