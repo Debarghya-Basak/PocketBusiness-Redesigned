@@ -62,6 +62,13 @@
         <item name="android:backgroundTint">@color/white</item>
     </style>
 
+    <style name="BlackBoldTexts20" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+
+    </style>
+
     <style name="ErrorTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
         <item name="errorTextAppearance">@style/errorTextAppearance</item>
         <item name="errorTextColor">#ffffff</item>

@@ -7,6 +7,7 @@
     <string name="inventory">Inventory</string>
     <string name="sell">Sell Page</string>
     <string name="qr">QR Page</string>
+    <string name="bill">Bill Page</string>
 
     <integer name="FADE_IN_DURATION">400</integer>
     <integer name="SCROLL_IN_FROM_BOTTOM_DURATION">400</integer>
