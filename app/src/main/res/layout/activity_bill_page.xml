@@ -149,6 +149,7 @@
                     style="@style/BlackBoldTexts20"/>
 
                 <TextView
+                    android:id="@+id/billPage_total_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -209,6 +210,7 @@
                     style="@style/BlackBoldTexts20"/>
 
                 <TextView
+                    android:id="@+id/billPage_amount_paid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -233,6 +235,7 @@
                     style="@style/BlackBoldTexts20"/>
 
                 <TextView
+                    android:id="@+id/billPage_balance_dues"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -295,6 +298,7 @@
                     style="@style/BlackBoldTexts20"/>
 
                 <TextView
+                    android:id="@+id/billPage_customer_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -318,6 +322,7 @@
                     style="@style/BlackBoldTexts20"/>
 
                 <TextView
+                    android:id="@+id/billPage_phone_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 

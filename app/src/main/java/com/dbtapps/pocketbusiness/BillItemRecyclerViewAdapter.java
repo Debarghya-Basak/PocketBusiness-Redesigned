@@ -35,9 +35,9 @@ public class BillItemRecyclerViewAdapter extends RecyclerView.Adapter<BillItemRe
     @Override
     public void onBindViewHolder(@NonNull BillItemRecyclerViewAdapter.MyViewHolder holder, int position) {
 
-        holder.itemName.setText(position + "A");
-        holder.itemQuantity.setText("1");
-        holder.itemPrice.setText("1.00");
+        holder.itemName.setText(SellPage.sellList.get(position).name);
+        holder.itemQuantity.setText(SellPage.sellListQuantityUnit.get(position).quantity + " " + SellPage.sellListQuantityUnit.get(position).unit);
+        holder.itemPrice.setText("Rs." + SellPage.sellList.get(position).sell_price);
 
         Log.d("Debug","BillItemRecyclerViewAdapter: View Bind at position - "+ position);
 
@@ -46,7 +46,7 @@ public class BillItemRecyclerViewAdapter extends RecyclerView.Adapter<BillItemRe
     @Override
     public int getItemCount() {
         Log.d("Debug","BillItemRecyclerViewAdapter: Get Item Count");
-        return 50;
+        return SellPage.sellList.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
