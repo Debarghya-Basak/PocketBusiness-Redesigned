@@ -114,12 +114,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="30dp"
-                android:background="@drawable/global_container_border"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
+
+                android:background="@drawable/global_container_border"
                 android:requiresFadingEdge="vertical"
                 android:fadingEdge="vertical"
                 android:fadingEdgeLength="10dp"
+                android:fadeScrollbars="false"
+                android:scrollbars="vertical"
+                android:scrollbarSize="10dp"
+                android:scrollbarTrackVertical="@drawable/global_scrollbar_track_color"
+                android:scrollbarThumbVertical="@drawable/global_scrollbar_vertical_thumb_color"
+                android:scrollbarAlwaysDrawVerticalTrack="true"
                 tools:layout_editor_absoluteY="37dp">
 
             </androidx.recyclerview.widget.RecyclerView>

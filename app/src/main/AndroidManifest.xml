@@ -21,7 +21,7 @@
 
         <activity
             android:name=".QRScanner"
-            android:exported="false" />
+            android:exported="false"/>
 
         <activity
             android:name=".BillPage"

@@ -25,6 +25,8 @@
         <item name="android:textColorHighlight">@color/selectedText</item>
         <item name="android:textColorLink">@color/selectedText</item>
         <item name="android:textCursorDrawable">@drawable/global_cursor_color</item>
+        <item name="android:screenOrientation">portrait</item>
+        <item name="recyclerViewStyle">@style/AppRecyclerView</item>
     </style>
 
     <style name="StrokeButton" parent="Widget.MaterialComponents.Button">
@@ -60,6 +62,12 @@
         <item name="cardCornerRadius">50dp</item>
         <item name="android:foreground">@drawable/global_container_border</item>
         <item name="android:backgroundTint">@color/white</item>
+    </style>
+
+    <style name="AppRecyclerView">
+
+        <item name="background">@drawable/global_container_border</item>
+
     </style>
 
     <style name="BlackBoldTexts20" parent="Widget.MaterialComponents.TextView">
